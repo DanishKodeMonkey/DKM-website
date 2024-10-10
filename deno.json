@@ -4,12 +4,11 @@
     "jsxFactory": "React.createElement",
     "jsxFragmentFactory": "React.Fragment",
     "jsxImportSourceTypes": "npm:@types/react@^18.3",
-    "lib": ["dom"]
+    "lib": ["dom", "es2015"]
   },
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.1.0",
     "@std/assert": "jsr:@std/assert@1",
-    "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1",
-    "react": "npm:react"
+    "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1"
   }
 }
