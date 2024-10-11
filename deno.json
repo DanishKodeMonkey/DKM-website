@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxFactory": "React.createElement",
-    "jsxFragmentFactory": "React.Fragment",
     "jsxImportSourceTypes": "npm:@types/react@^18.3",
     "lib": ["dom", "es2015"]
   },
