@@ -1,5 +1,3 @@
-export type Dino = { name: string; description: string };
-
 export interface QRCodeProps {
     value: string; // URL to encode in QR
     size?: number; // optional size for QR
