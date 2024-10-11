@@ -6,7 +6,7 @@ const BusinessCardPage: React.FC = () => {
     return (
         <div>
             <h1>Danish Kode Monkey</h1>
-            <QRCodeComponent value="localhost:5173" />
+            <QRCodeComponent value="https://danishkodemonkey.github.io/DKM-website/" />
         </div>
     );
 };
