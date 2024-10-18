@@ -4,8 +4,6 @@ import "./App.css";
 import BusinessCardPage from "./pages/businessCard.tsx";
 
 function App() {
-  console.log("APP component rendered");
-
   return (
     <HashRouter>
       <Routes>
