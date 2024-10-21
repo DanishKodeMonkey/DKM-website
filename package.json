@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "deno task dev:api & deno task dev:vite",
+    "dev:api": "deno run --allow-net --allow-env api/main.ts",
+    "dev:vite": "deno run -A npm:vite"
   },
   "dependencies": {
     "react": "^18.3.1",
