@@ -26,6 +26,8 @@
   /* Ensuring consistent font rendering */
   body {
     @apply antialiased;
+    /* global transition for colors (dark light mode switch) */
+    @apply transition-colors duration-300 ease-in-out
   }
 
   /* Dark/Light mode handling */
@@ -51,7 +53,7 @@
     }
 
     .card {
-      @apply border-neutral-dark;
+      @apply bg-white border-neutral-dark;
     }
   }
 
@@ -78,7 +80,7 @@
     }
 
     .card {
-      @apply border-neutral-light;
+      @apply bg-neutral text-neutral-light border-neutral-light;
     }
   }
 
