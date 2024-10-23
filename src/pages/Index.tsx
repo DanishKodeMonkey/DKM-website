@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+// @ts-ignore: Deno ts hates image file imports
+import DKM from '../public/assets/mm12sSNz.jpg'
 import { Link } from "react-router-dom";
 import { Comment } from "../types.ts";
 
 export default function Index() {
+
+  
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
     (async () => {
       const response = await fetch("/api/comments/");
-      console.log(response);
 
       const allComments = await response.json() as Comment[];
       setComments(allComments);
@@ -19,6 +22,7 @@ export default function Index() {
     <main className="container">
       <div className="text-center responsive-text">
         <h1>Hello there!</h1>
+        <div className="flex align-middle justify-center"><img src={DKM} alt="danishKodeMonkey" className="avatar"/></div>
         <h3>
           My name is <span className="text-sky-400">Daniel</span>
         </h3>
@@ -30,32 +34,29 @@ export default function Index() {
           I love creating{" "}
           <span className="font-bold text-slate-100">interesting</span> and{" "}
           <span className="font-bold text-slate-100">intuitive</span>{" "}
-          web solutions, cracking 
+          web solutions, cracking{" "}
           <span className="font-bold text-red-500"> challenges</span> and{" "}
           <span className=" font-bold text-purple-500">learning</span>{" "}
           new things!
         </p>
-
       </div>
-      <button>Test button</button>
       <div className="container">
-        <h2>
+        <h3>
           Have a look at what people think of this site!
-        </h2>
+        </h3>
         <p>
           Click the comments to see some details!
         </p>
         <div className="flex flex-col gap-5 my-4">
           {comments.map((comment: Comment) => {
             return (
-              <div className="card">
-                  <Link
-                    to={`/${comment.id}`}
-                    key={comment.id}
-                    className="comment"
-                  >
-                    {comment.name}: {comment.message}
-                  </Link>
+              <div className="card" key={comment.id}>
+                <Link
+                  to={`/${comment.id}`}
+                  className="comment"
+                >
+                  {comment.name}: {comment.message}
+                </Link>
               </div>
             );
           })}
