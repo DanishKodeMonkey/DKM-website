@@ -4,8 +4,12 @@ import DKM from "../public/assets/mm12sSNz.jpg";
 
 import { Link } from "react-router-dom";
 import { Comment } from "../types.ts";
+import { useLoading } from "../contexts/LoadingContext.tsx";
+import Loading from "../components/Loading.tsx";
 
 export default function Index() {
+  const {isLoading, setIsLoading} = useLoading()
+
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
@@ -17,8 +21,10 @@ export default function Index() {
     })();
   }, []);
 
+
   return (
     <main className="container">
+      {isLoading ? (<Loading />) : (<>
       <div className="text-center responsive-text">
         <h1>Hello there!</h1>
         <div className="flex align-middle justify-center">
@@ -62,7 +68,7 @@ export default function Index() {
             );
           })}
         </div>
-      </div>
+      </div></>)}
     </main>
   );
 }
