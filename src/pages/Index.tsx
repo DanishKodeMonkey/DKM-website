@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 // @ts-ignore: Deno ts hates image file imports
-import DKM from '../public/assets/mm12sSNz.jpg'
+import DKM from "../public/assets/mm12sSNz.jpg";
+
 import { Link } from "react-router-dom";
 import { Comment } from "../types.ts";
 
 export default function Index() {
-
-  
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
@@ -22,7 +21,9 @@ export default function Index() {
     <main className="container">
       <div className="text-center responsive-text">
         <h1>Hello there!</h1>
-        <div className="flex align-middle justify-center"><img src={DKM} alt="danishKodeMonkey" className="avatar"/></div>
+        <div className="flex align-middle justify-center">
+          <img src={DKM} alt="danishKodeMonkey" className="avatar" />
+        </div>
         <h3>
           My name is <span className="text-sky-400">Daniel</span>
         </h3>
@@ -35,7 +36,7 @@ export default function Index() {
           <span className="font-bold text-slate-100">interesting</span> and{" "}
           <span className="font-bold text-slate-100">intuitive</span>{" "}
           web solutions, cracking{" "}
-          <span className="font-bold text-red-500"> challenges</span> and{" "}
+          <span className="font-bold text-red-500">challenges</span> and{" "}
           <span className=" font-bold text-purple-500">learning</span>{" "}
           new things!
         </p>
