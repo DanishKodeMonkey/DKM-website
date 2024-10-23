@@ -192,8 +192,8 @@
   }
 
   @media (prefers-color-scheme:light){
-    header{
-    @apply bg-neutral-dark text-neutral-light;
+  header{
+  @apply bg-neutral-dark text-neutral-light;
   }
     span{
       @apply bg-neutral-light
