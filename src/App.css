@@ -83,6 +83,7 @@
     }
 
     /* Heading styles and breakpoint (common for both modes) */
+
     h1, h2, h3, h4, h5, h6 {
       @apply font-sans font-bold leading-tight;
     }
@@ -176,7 +177,7 @@
     }
 
     /* COMPONENT BASE STYLING */
-    header {
+    header,footer{
       @apply flex items-center justify-between py-4 px-6 md:px-12;
       h1{
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
@@ -192,7 +193,7 @@
   }
 
   @media (prefers-color-scheme:light){
-  header{
+  header,footer{
   @apply bg-neutral-dark text-neutral-light;
   }
     span{
@@ -209,7 +210,7 @@
   }
   }
   @media (prefers-color-scheme:dark){
-    header{
+    header,footer{
     @apply bg-neutral text-neutral-dark;
   }
     span{
