@@ -6,5 +6,5 @@ import { LoadingProvider } from "./contexts/LoadingContext.tsx";
 createRoot(document.getElementById("root") as HTMLElement).render(
   <LoadingProvider>
     <App />
-  </LoadingProvider>
+  </LoadingProvider>,
 );

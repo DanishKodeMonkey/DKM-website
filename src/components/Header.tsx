@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between p-4 shadow-md">
+    <header>
       <div className="flex items-center">
         <img src={DKM} alt="logo" className="logo" />
         <h1>The danishKodeMonkey cave</h1>

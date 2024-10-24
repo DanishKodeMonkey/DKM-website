@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { LoadingContextChildren, LoadingContextType } from "../types.ts"; // Ensure this path is correct
 
 const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
@@ -20,7 +20,7 @@ export const LoadingProvider: React.FC<LoadingContextChildren> = (
 
   useEffect(() => {
     // Simulate loading completion after initial render
-    const timer = setTimeout(() => setIsLoading(false), 1000); 
+    const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
