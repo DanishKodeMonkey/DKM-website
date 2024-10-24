@@ -178,7 +178,7 @@
 
     /* COMPONENT BASE STYLING */
     header,footer{
-      @apply flex items-center justify-between py-4 px-6 md:px-12;
+      @apply flex  justify-between py-4 px-6 md:px-12;
       h1{
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
       }
@@ -188,6 +188,9 @@
       button{
         @apply ring-0 bg-transparent h-full
       }
+    }
+    footer{
+      @apply text-center
     }
 
   }
@@ -208,6 +211,12 @@
   .nav-burger{
     @apply bg-neutral-dark
   }
+  #tech-scroller{
+    @apply bg-slate-500 ring-neutral-dark;
+    span{
+      @apply bg-transparent text-neutral-dark
+    }
+  }
   }
   @media (prefers-color-scheme:dark){
     header,footer{
@@ -225,4 +234,41 @@
     .nav-burger{
       @apply bg-neutral
     }
+    #tech-scroller{
+      @apply ring-neutral
+    }
   }
+
+/* Tech scroller */
+#tech-scroller{
+  @apply flex flex-col align-middle overflow-hidden ring-4 rounded-lg mx-auto my-5 md:w-1/3;  
+}
+
+.tech-scroll-title{
+  @apply ml-4 font-medium;
+}
+.tech-container{
+  @apply flex flex-row  flex-grow-0 flex-shrink-0 my-4 items-center align-middle justify-start whitespace-nowrap;
+}
+
+
+/* #lang-container{
+  @apply animate-slide-left w-max
+}
+
+#frameLib-container{
+@apply animate-slide-right w-max
+}
+ */
+.tech-container div>p{
+  @apply text-center text-sm font-medium ;
+}
+
+.tech-item{
+  @apply flex flex-col items-center text-slate-100 w-12 m-4
+}
+
+.tech-icon {
+  @apply w-12 h-12;
+}
+
