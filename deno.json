@@ -1,7 +1,7 @@
 {
   "nodeModulesDir": "auto",
   "compilerOptions": {
-    "types": ["vite/client", "./src/vite-env.d.ts"],
+    "types": ["vite/client", "./src/vite-env.d.ts", "./src/images.d.ts"],
     "lib": ["esnext", "dom"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
