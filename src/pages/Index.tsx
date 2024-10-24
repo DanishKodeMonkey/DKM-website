@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Comment } from "../types.ts";
 import { useLoading } from "../contexts/LoadingContext.tsx";
 import Loading from "../components/Loading.tsx";
+import TechScroller from "../components/TechScroller.tsx";
 
 export default function Index() {
   const { isLoading, setIsLoading } = useLoading();
@@ -48,6 +49,7 @@ export default function Index() {
               <span className=" font-bold text-purple-500">learning</span>{" "}
               new things!
             </p>
+            <TechScroller />
           </div>
           <div className="container">
             <h3>

@@ -1,6 +1,12 @@
+import React from 'react'
+import { Tech } from "../types.ts";
+
 /// <reference path="../images.d.ts" />
 /// <reference path="../vite-env.d.ts" />
 // @ts-self-types="../images.d.ts"
+
+/* FIXME When Deno can play nice with svg imports, fix this */
+
 
 // @ts-ignore: Deno hates image imports for now
 import bootstrapIcon from '../public/assets/bootstrap.svg';
@@ -46,3 +52,66 @@ import viteIcon from '../public/assets/vite.svg';
 import webpackIcon from '../public/assets/webpack.svg';
 
 
+const FrameworksAndLibraries: Tech[] = [
+    { src: bootstrapIcon, alt: 'Bootstrap' },
+    { src: dockerIcon, alt: 'Docker' },
+    { src: expressIcon, alt: 'Express' },
+    { src: flaskIcon, alt: 'Flask' },
+    { src: gitIcon, alt: 'Git' },
+    { src: htmxIcon, alt: 'HTMX' },
+    { src: mongodbIcon, alt: 'MongoDB' },
+    { src: mongooseIcon, alt: 'Mongoose' },
+    { src: postgresqlIcon, alt: 'PostgreSQL' },
+    { src: prismaIcon, alt: 'Prisma' },
+    { src: reactIcon, alt: 'React' },
+    { src: tailwindcssIcon, alt: 'Tailwind CSS' },
+    { src: viteIcon, alt: 'Vite' },
+    { src: webpackIcon, alt: 'Webpack' },
+]
+
+const languages: Tech[] = [
+    { src: css3Icon, alt: 'CSS3' },
+    { src: denoIcon, alt: 'Deno' },
+    { src: html5Icon, alt: 'HTML5' },
+    { src: javascriptIcon, alt: 'JavaScript' },
+    { src: nodedotjsIcon, alt: 'Node.js' },
+    { src: pythonIcon, alt: 'Python' },
+    { src: typescriptIcon, alt: 'TypeScript' },
+]
+
+
+
+const TechItem: React.FC<Tech> = ({ src, alt }:Tech) => (
+    <div className="tech-item" id={alt}>
+        <p>{alt}</p>
+        <img src={src} alt={alt} className="tech-icon" />
+    </div>
+);
+
+const TechScroller: React.FC = () => {
+const itemWidth = 48;
+const langTranslate = itemWidth * languages.length
+const frameLibTranslate = itemWidth * FrameworksAndLibraries.length
+
+    return (
+        <div id="tech-scroller">
+            <span className="tech-scroll-title">Tech stack:</span>
+            <div className="tech-container animate-slide-left" id="lang-container" style={{width: `${langTranslate * 5}px * 5`}}>
+                {/* Infinite stack of languages */}
+                {[...languages, ...languages, ...languages, ...languages, ...languages].map((tech, index) => (
+                    <TechItem key={index} src={tech.src} alt={tech.alt} />
+                ))}
+            </div>
+            <div className="tech-container animate-slide-right" id="frameLib-container" style={{width: `${frameLibTranslate * 5}px`}}>
+                {/* Infinite stack of frameworks and libraries */}
+                {[...FrameworksAndLibraries, ...FrameworksAndLibraries, ...FrameworksAndLibraries, ...FrameworksAndLibraries].map(
+                    (tech, index) => (
+                        <TechItem key={index} src={tech.src} alt={tech.alt} />
+                    )
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default TechScroller
