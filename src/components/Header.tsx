@@ -30,8 +30,8 @@ const Header = () => {
         <div
           className={`absolute md:relative nav-burger right-0 mt-2 shadow-lg rounded-lg transition-all origin-top duration-300 ease-in-out transform ${
             isNavOpen
-              ? "scale-y-100 opacity-100"
-              : "scale-y-50 opacity-0 pointer-events-none"
+              ? "block scale-y-100 opacity-100"
+              : "block scale-y-50 opacity-0"
           } md:flex md:items-center md:opacity-100 md:scale-100`}
         >
           <ul className="flex flex-col md:flex-row md:space-x-4 p-4">
