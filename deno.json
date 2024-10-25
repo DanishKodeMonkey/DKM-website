@@ -1,12 +1,19 @@
 {
   "nodeModulesDir": "auto",
+  "lint": {
+    "rules": {
+      "no-local": false
+    }
+  },
   "compilerOptions": {
+    "strict": false,
     "types": ["vite/client", "./src/vite-env.d.ts", "./src/images.d.ts"],
     "lib": ["esnext", "dom"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
   "include": ["src"],
+  "exclude": ["**/*.jpg", "**/*.svg"],
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.1.0",
     "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1"

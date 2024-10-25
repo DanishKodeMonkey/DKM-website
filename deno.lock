@@ -14,6 +14,7 @@
     "jsr:@std/media-types@1": "1.0.3",
     "jsr:@std/path@1": "1.0.6",
     "jsr:@tajpouria/cors@^1.2.1": "1.2.1",
+    "npm:@deno/vite-plugin@1": "1.0.0_vite@5.4.8__@types+node@22.5.4_@types+node@22.5.4",
     "npm:@eslint/js@^9.11.1": "9.12.0",
     "npm:@types/node@*": "22.5.4",
     "npm:@types/react-dom@^18.3.0": "18.3.0",
@@ -254,6 +255,12 @@
         "@babel/helper-string-parser",
         "@babel/helper-validator-identifier",
         "to-fast-properties"
+      ]
+    },
+    "@deno/vite-plugin@1.0.0_vite@5.4.8__@types+node@22.5.4_@types+node@22.5.4": {
+      "integrity": "sha512-Q9UeWqs3s7B5lqzu1Z5QrzYAzqTj3+F9YW17tWobGRbT2G40ihwis6zK/+QgMgcG4fm3IqdIfXmpQYhkZpdMfw==",
+      "dependencies": [
+        "vite@5.4.8_@types+node@22.5.4"
       ]
     },
     "@esbuild/aix-ppc64@0.21.5": {
@@ -1724,6 +1731,7 @@
     ],
     "packageJson": {
       "dependencies": [
+        "npm:@deno/vite-plugin@1",
         "npm:@eslint/js@^9.11.1",
         "npm:@types/react-dom@^18.3.0",
         "npm:@types/react@^18.3.10",
