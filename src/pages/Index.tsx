@@ -8,7 +8,7 @@ import { useLoading } from "../contexts/LoadingContext.tsx";
 import TechScroller from "../components/TechScroller.tsx";
 
 export default function Index() {
-  const { isLoading, setIsLoading } = useLoading();
+  const {setIsLoading } = useLoading();
 
   const [comments, setComments] = useState<Comment[]>([]);
 

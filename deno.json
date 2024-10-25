@@ -1,10 +1,5 @@
 {
   "nodeModulesDir": "auto",
-  "lint": {
-    "rules": {
-      "no-local": false
-    }
-  },
   "compilerOptions": {
     "strict": false,
     "types": ["vite/client", "./src/vite-env.d.ts", "./src/images.d.ts"],

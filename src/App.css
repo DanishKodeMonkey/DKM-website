@@ -26,7 +26,7 @@
 
   /* app flex */
   .App{
-    @apply flex flex-col min-h-screen
+    @apply flex flex-col min-h-screen;
   }
 
   /* Ensuring consistent font rendering */
@@ -232,19 +232,19 @@
     @apply bg-neutral text-neutral-dark;
   }
     span{
-      @apply bg-neutral-dark
+      @apply bg-neutral-dark;
     }
     li{
-      @apply hover:bg-primary-light
+      @apply hover:bg-primary-light;
     }
     a{
-      @apply hover:text-primary-dark
+      @apply hover:text-primary-dark;
     }
     .nav-burger{
-      @apply bg-neutral
+      @apply bg-neutral;
     }
     #tech-scroller{
-      @apply ring-neutral
+      @apply ring-neutral;
     }
   }
 
