@@ -15,17 +15,18 @@ export default function Index() {
 
   useEffect(() => {
     (async () => {
+      setIsLoading(true)
       const response = await fetch("/api/comments/");
-
+      
       const allComments = await response.json() as Comment[];
       setComments(allComments);
+      setIsLoading(false)
     })();
+
   }, []);
 
   return (
-    <main className="container">
-      {isLoading ? <Loading /> : (
-        <>
+<>
           <div className="text-center responsive-text">
             <h1>Hello there!</h1>
             <div className="flex align-middle justify-center">
@@ -63,7 +64,7 @@ export default function Index() {
                 return (
                   <div className="card" key={comment.id}>
                     <Link
-                      to={`/${comment.id}`}
+                      to={`/comments/${comment.id}`}
                       className="comment"
                     >
                       {comment.name}: {comment.message}
@@ -73,8 +74,7 @@ export default function Index() {
               })}
             </div>
           </div>
-        </>
-      )}
-    </main>
+
+</>
   );
 }
