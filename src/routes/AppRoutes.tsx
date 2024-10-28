@@ -8,11 +8,13 @@ import {Navigate} from 'react-router-dom'
 const Index = lazy(() =>import('../pages/Index.tsx'))
 const CommentDetails = lazy(()=>import('../pages/CommentDetails.tsx'))
 const About = lazy(()=>import('../pages/About.tsx'))
+const Portfolio = lazy(() => import('../pages/Portfolio.tsx'))
 
 export const routes: RouteObject[] = [
     {path: '/', element: <Index />},
     {path:'/comments/:selectedComment', element: <CommentDetails />},
     {path:'/about', element: <About />},
+    {path:'/portfolio', element: <Portfolio />},
     // Redirect for unknown paths
     {path: '*', element: <Navigate to='/' replace />}
 ]
