@@ -42,7 +42,17 @@ const Portfolio: React.FC = () =>{
                     {repos.map((repo: Repo)=>(
                         <div key={repo.id} className="card">
                             <div className="p-4 flex-grow overflow-scroll">
-                                <h2 className="card-title">{repo.name}</h2>
+                                <div className="flex justify-between">
+                                    <div className="w-1/2">
+                                        <h2 className="card-title">{repo.name}</h2>
+                                    </div>
+                                    <div className="repo-preview ring-2 flex items-center justify-center w-1/2">
+                {repo.preview_image ? (
+                    <img src={repo.preview_image} alt="Preview" className="repo-preview-image" />
+                ) : (
+                 <p className="text-base">No Preview Available</p>
+                )}
+            </div>                                </div>
                                 <p className="card-date">
                                 Created at: {new Date(repo.created_at).toLocaleDateString()}                          
                                 </p>

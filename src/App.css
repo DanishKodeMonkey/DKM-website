@@ -176,7 +176,7 @@
     }
 
     .card-title {
-      @apply mb-2 text-xl font-semibold;
+      @apply mb-2 text-xl font-semibold whitespace-normal text-ellipsis;
     }
     .card-description{
       @apply text-base;
@@ -187,6 +187,12 @@
     }
     .card-button {
       @apply  rounded-lg px-4 py-1 transition hover:bg-primary-dark mt-2;
+    }
+    .repo-preview{
+      @apply max-w-36 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
+    }
+    .repo-preview-image{
+      @apply w-full h-full object-cover;
     }
     /* Utilities */
     .text-responsive {

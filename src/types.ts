@@ -22,4 +22,5 @@ export interface Repo {
   description: string | null;
   created_at: string;
   updated_at: string;
+  preview_image: string;
 }
