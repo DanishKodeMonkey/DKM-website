@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "deno task dev:api & deno task dev:vite",
-    "dev:api": "deno run --allow-net --allow-env api/main.ts",
+    "dev:api": "deno run --allow-net --allow-env --allow-read api/main.ts",
     "dev:vite": "deno run -A npm:vite"
   },
   "dependencies": {
     "@deno/vite-plugin": "^1.0.0",
+    "@octokit/rest": "^21.0.2",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "react": "^18.3.1",
