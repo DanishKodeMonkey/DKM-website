@@ -10,7 +10,7 @@ export interface LoadingContextType {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export interface Tech{
+export interface Tech {
   src: string;
   alt: string;
 }

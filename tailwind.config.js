@@ -23,18 +23,20 @@ export default {
           dark: "#0f172a",
         },
       },
-      keyframes:{
-        'slide-left':{
-          '0%':{transform: 'translateX(0%)'},'100%':{transform:'translateX(-105%)'}
+      keyframes: {
+        "slide-left": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-105%)" },
         },
-        'slide-right':{
-          '0%':{transform: 'translateX(0%)'},'100%':{transform:'translateX(-100%)'}
-        }
+        "slide-right": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
-      animation:{
-        'slide-left':'slide-left 10s linear infinite',
-        'slide-right':'slide-right 40s reverse linear infinite'
-      }
+      animation: {
+        "slide-left": "slide-left 10s linear infinite",
+        "slide-right": "slide-right 40s reverse linear infinite",
+      },
     },
   },
   plugins: [],

@@ -1,17 +1,17 @@
 import { Application, Router } from "@oak/oak";
 import { oakCors } from "@tajpouria/cors";
-import "jsr:@std/dotenv/load"
-import {Octokit} from '@octokit/rest'
+import "jsr:@std/dotenv/load";
+import { Octokit } from "@octokit/rest";
 import data from "./data.json" with { type: "json" };
-import { getPreviewImageUrl, checkPreviewImageExists } from "./utils.ts";
+import { checkPreviewImageExists, getPreviewImageUrl } from "./utils.ts";
 
 /* Router  */
 const router = new Router();
-const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN")
+const GITHUB_TOKEN = Deno.env.get("GITHUB_TOKEN");
 
 const octokit = new Octokit({
-  auth: GITHUB_TOKEN
-})
+  auth: GITHUB_TOKEN,
+});
 
 /* Comments */
 router.get("/api/comments", (context) => {
@@ -28,17 +28,19 @@ router.get("/api/comments/:commentId", (context) => {
 });
 
 /* Github (portfolio) */
-router.get("/api/repos", async(context) =>{
-  try{
+router.get("/api/repos", async (context) => {
+  try {
     // fetch user repos
-    const response = await octokit.repos.listForAuthenticatedUser({per_page: 10,})
+    const response = await octokit.repos.listForAuthenticatedUser({
+      per_page: 10,
+    });
 
     /* preview image check */
-    const repos = await Promise.all(response.data.map(async(repo) =>{
-      const previewUrl = getPreviewImageUrl(repo.owner.login, repo.name)
-      const imageExists = await checkPreviewImageExists(previewUrl)
+    const repos = await Promise.all(response.data.map(async (repo) => {
+      const previewUrl = getPreviewImageUrl(repo.owner.login, repo.name);
+      const imageExists = await checkPreviewImageExists(previewUrl);
 
-      return{
+      return {
         id: repo.id,
         name: repo.name,
         html_url: repo.html_url,
@@ -46,17 +48,16 @@ router.get("/api/repos", async(context) =>{
         created_at: repo.created_at, // parse to Date
         updated_at: repo.updated_at,
         preview_image: imageExists ? previewUrl : null,
-      }
-    }))
+      };
+    }));
 
-    context.response.body = repos
-    
-  }catch(error){
-    console.error("Error fetching GitHub repos: ", error)
-    context.response.status = 500
-    context.response.body = { error : "Failed to fetch repos"}
+    context.response.body = repos;
+  } catch (error) {
+    console.error("Error fetching GitHub repos: ", error);
+    context.response.status = 500;
+    context.response.body = { error: "Failed to fetch repos" };
   }
-})
+});
 
 /* App */
 const app = new Application();
