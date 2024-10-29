@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  .body-background-dark{
+    @apply bg-gradient-to-tr from-neutral-800 from-20% via-neutral-900 via-50% to-neutral-800 to-80%;
+  }
+  .body-background-light{
+    @apply bg-gradient-to-tr from-neutral-400 from-20% via-neutral-300 via-60% to-neutral-300 to-80%;
+  }
+  .hf-background-dark{
+    @apply bg-gradient-to-bl from-neutral-500 from-5% via-neutral-600 via-80% to-95% to-neutral-500 ring-4 ring-secondary-dark ;
+  }
+  .hf-background-light{
+    @apply bg-gradient-to-bl from-neutral-700 from-5% via-neutral-800 via-80%  to-95% to-neutral-700 ring-4 ring-secondary-light;
+  }
+  .card-background-dark{
+    @apply bg-gradient-to-tl from-tertiary from-5% via-tertiary-dark via-40% to-95% to-tertiary ring-4 ring-secondary-dark;
+  }
+  .card-background-light{
+    @apply bg-gradient-to-br from-tertiary-light from-5% via-tertiary-light via-20%  to-tertiary to-95% ring-4 ring-secondary-light;
+  }
+}
+
 @layer base {
   /* Globals */
   /* Margin and padding reset */
@@ -31,7 +52,7 @@
 
   /* Ensuring consistent font rendering */
   body {
-    @apply antialiased bg-neutral-light text-neutral-dark dark:bg-neutral-dark dark:text-neutral-light;/* Default styles */
+    @apply antialiased body-background-light text-neutral-dark dark:body-background-dark dark:text-neutral-light;/* Default styles */
     /* global transition for colors (dark light mode switch) */
     @apply transition-colors duration-300 ease-in-out; 
   }
@@ -56,7 +77,7 @@
   }
   
   .card {
-    @apply bg-tertiary-light border-neutral-dark dark:bg-tertiary-dark dark:text-neutral-light dark:border-neutral-light;
+    @apply card-background-light border-neutral-dark dark:card-background-dark dark:text-neutral-light dark:border-neutral-light;
   }
   
   .card-button {
@@ -179,7 +200,7 @@
     }
 
     .card {
-      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-lg shadow-lg transition-all  ease-in-out  hover:shadow-xl hover:shadow-neutral hover:scale-125 hover:ring-4 hover:z-10;
+      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-lg shadow-lg transition-all  ease-in-out  hover:shadow-xl hover:shadow-neutral hover:scale-110 lg:hover:scale-125 hover:ring-4 hover:z-10;
     }
 
     .card-title {
@@ -228,7 +249,7 @@
       @apply flex-grow
     }
     header,footer{
-      @apply flex  justify-between py-4 px-6 md:px-12;
+      @apply flex lg:flex-col justify-between pt-4;
       h1{
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
       }
@@ -247,17 +268,16 @@
 
 
   header,footer{
-  @apply bg-neutral-dark text-neutral-light dark:bg-neutral dark:text-neutral-dark;
+  @apply hf-background-light text-neutral-light dark:hf-background-dark dark:text-neutral-dark max-lg:py-4;
   }
-
     li{
-      @apply hover:bg-secondary-dark dark:hover:bg-tertiary transition-colors ease-in-out transition;
+      @apply hover:bg-secondary-dark max-lg:dark:hover:bg-secondary transition-colors ease-in-out transition;
     }
     a{
-      @apply text-secondary hover:text-secondary-light;
+      @apply dark:text-secondary-light text-green-950 hover:text-secondary-light;
     }
   .nav-burger{
-    @apply bg-neutral-dark dark:bg-neutral;
+    @apply bg-neutral-dark dark:bg-neutral-light;
   }
   #tech-scroller{
     @apply bg-tertiary-light ring-neutral-dark dark:bg-tertiary-dark dark:ring-neutral;

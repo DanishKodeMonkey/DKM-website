@@ -29,10 +29,6 @@ export default {
           light: "#94a3b8",
           dark: "#0f172a",
         },
-        'highlight-one':{
-          DEFAULT: '#3B82F6',
-          700: '#60A5FA'
-        }
       },
       keyframes: {
         "slide-left": {

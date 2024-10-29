@@ -16,7 +16,7 @@ export default function About() {
       <h4>
         I am a{"  "}
         <span className="highlight-yellow">Full-stack developer</span>, going on 3
-        years. <hr /> I am on an eternal quest of continuos learning,
+        years. <br /> I am on an eternal quest of continuos learning,
         With a focus on {" "}
         <span className="highlight-green">web technologies and development</span>
 
