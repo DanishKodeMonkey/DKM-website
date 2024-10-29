@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js, ts, jsx,tsx}"],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
@@ -12,9 +13,15 @@ export default {
         },
         secondary: {
           /* represents highlights, call to actions or warnings: Amber pallette */
-          DEFAULT: "#d97706",
-          light: "#fbbf24",
-          dark: "#78350f",
+          DEFAULT: "#16a34a",
+          light: "#4ade80",
+          dark: "#14532d",
+        },
+        tertiary: {
+          /* For tertiary elements, cards, backgrounds on backgrounds, etc. */
+          DEFAULT: "#4338ca",
+          light: "#a5b4fc",
+          dark: "#312e81"
         },
         neutral: {
           /* represents backgrounds-borders and text: Slate pallette */
@@ -22,6 +29,10 @@ export default {
           light: "#94a3b8",
           dark: "#0f172a",
         },
+        'highlight-one':{
+          DEFAULT: '#3B82F6',
+          700: '#60A5FA'
+        }
       },
       keyframes: {
         "slide-left": {
