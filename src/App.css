@@ -19,7 +19,7 @@
     @apply bg-gradient-to-tl from-tertiary from-5% via-tertiary-dark via-40% to-95% to-tertiary ring-4 ring-secondary-dark;
   }
   .card-background-light{
-    @apply bg-gradient-to-br from-tertiary-light from-5% via-tertiary-light via-20%  to-tertiary to-95% ring-4 ring-secondary-light;
+    @apply bg-gradient-to-br from-tertiary from-5% via-indigo-500 via-20%  to-tertiary to-95% ring-4 ring-secondary-light;
   }
 }
 
@@ -58,10 +58,7 @@
   }
   
   /* Dark/Light mode handling */
-  a {
-    @apply text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary;
-  }
-  
+
   p {
     @apply text-neutral-dark dark:text-neutral-light;
   }
@@ -81,7 +78,7 @@
   }
   
   .card-button {
-    @apply bg-secondary text-neutral-100 dark:bg-tertiary-dark dark:text-neutral-100;
+    @apply bg-secondary text-neutral-100 hover:bg-secondary-light hover:text-neutral-700 dark:bg-secondary dark:hover:bg-secondary-light dark:hover:text-secondary-dark dark:text-neutral-100;
   }
   
   .card-title,
@@ -200,7 +197,7 @@
     }
 
     .card {
-      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-lg shadow-lg transition-all  ease-in-out  hover:shadow-xl hover:shadow-neutral hover:scale-110 lg:hover:scale-125 hover:ring-4 hover:z-10;
+      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-lg shadow-lg transition-all  ease-in-out  hover:shadow-xl hover:shadow-neutral hover:scale-110 lg:hover:scale-125  hover:ring-4 hover:z-10;
     }
 
     .card-title {
@@ -214,7 +211,7 @@
       @apply text-sm mb-2;
     }
     .card-button {
-      @apply  rounded-lg px-4 py-1 transition hover:bg-primary-dark mt-2;
+      @apply  rounded-lg px-4 py-1 transition mt-2;
     }
     .repo-preview{
       @apply max-w-36 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
