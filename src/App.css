@@ -31,74 +31,81 @@
 
   /* Ensuring consistent font rendering */
   body {
-    @apply antialiased bg-neutral-dark;
+    @apply antialiased bg-neutral-light text-neutral-dark dark:bg-neutral-dark dark:text-neutral-light;/* Default styles */
     /* global transition for colors (dark light mode switch) */
-    @apply transition-colors duration-300 ease-in-out } 
-      /* Dark/Light mode handling */
-      @media (prefers-color-scheme: light) {
-      body {
-        @apply bg-neutral-light text-neutral-dark;
-      }
-
-      a {
-        @apply text-primary hover:text-primary-dark;
-      }
-
-      p {
-        @apply text-neutral-dark;
-      }
-
-      button {
-        @apply bg-primary text-white hover:bg-primary-dark;
-      }
-
-      input, textarea, select {
-        @apply border-neutral-light focus:border-primary focus:ring-primary;
-      }
-
-      .card {
-        @apply bg-secondary border-neutral-dark;
-      }
-      .card-button{
-        @apply bg-primary text-neutral-100
-      }
-      .card-title, .card-description, .card-date{
-        @apply text-neutral-dark
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        @apply bg-neutral-dark text-neutral-light;
-      }
-
-      a {
-        @apply text-primary-light hover:text-primary;
-      }
-
-      p {
-        @apply text-neutral-light;
-      }
-
-      button {
-        @apply bg-primary-light text-neutral-dark hover:bg-primary;
-      }
-
-      input, textarea, select {
-        @apply border-neutral-dark focus:border-primary-light
-          focus:ring-primary-light;
-      }
-
-      .card {
-        @apply bg-secondary-dark text-neutral-light border-neutral-light;
-      }
-      .card-button{
-        @apply bg-primary-dark text-neutral-100
-      }
-      .card-title, .card-description, .card-date{
-        @apply text-neutral-100
-      }
-    }
+    @apply transition-colors duration-300 ease-in-out; 
+  }
+  
+  /* Dark/Light mode handling */
+  a {
+    @apply text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary;
+  }
+  
+  p {
+    @apply text-neutral-dark dark:text-neutral-light;
+  }
+  
+  button {
+    @apply bg-primary text-white hover:bg-primary-dark dark:bg-primary-light dark:text-neutral-dark dark:hover:bg-primary;
+  }
+  
+  input,
+  textarea,
+  select {
+    @apply border-neutral-light focus:border-primary focus:ring-primary dark:border-neutral-dark dark:focus:border-primary-light dark:focus:ring-primary-light;
+  }
+  
+  .card {
+    @apply bg-tertiary-light border-neutral-dark dark:bg-tertiary-dark dark:text-neutral-light dark:border-neutral-light;
+  }
+  
+  .card-button {
+    @apply bg-secondary text-neutral-100 dark:bg-tertiary-dark dark:text-neutral-100;
+  }
+  
+  .card-title,
+  .card-description,
+  .card-date {
+    @apply text-neutral-dark dark:text-neutral-100;
+  }
+  
+  /* Highlights */
+  .highlight-blue {
+    @apply text-blue-600 dark:text-blue-500; 
+  }
+  
+  .highlight-green {
+    @apply text-green-600 dark:text-green-500;
+  }
+  
+  .highlight-red {
+    @apply text-red-600 dark:text-red-500;
+  }
+  
+  .highlight-yellow {
+    @apply text-yellow-600 dark:text-yellow-500;
+  }
+  
+  .highlight-purple {
+    @apply text-purple-600 dark:text-purple-500;
+  }
+  
+  .highlight-pink {
+    @apply text-pink-600 dark:text-pink-500;
+  }
+  
+  .highlight-amber {
+    @apply text-amber-600 dark:text-amber-500; 
+  }
+  
+  .highlight-teal {
+    @apply text-teal-600 dark:text-teal-500; 
+  }
+  
+  .highlight-orange {
+    @apply text-orange-600 dark:text-orange-500; 
+  }
+  
 
     /* Heading styles and breakpoint (common for both modes) */
 
@@ -120,7 +127,7 @@
       @apply text-xl md:text-2xl lg:text-3xl;
     }
     p{
-      @apply text-base md:text-xl lg:text-2xl
+      @apply text-base md:text-xl lg:text-2xl;
     }
     a {
       @apply transition-colors text-base md:text-xl lg:text-2xl;
@@ -172,7 +179,7 @@
     }
 
     .card {
-      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-lg shadow-lg transition-shadow hover:shadow-xl ease-in-out;
+      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-lg shadow-lg transition-all  ease-in-out  hover:shadow-xl hover:shadow-neutral hover:scale-125 hover:ring-4 hover:z-10;
     }
 
     .card-title {
@@ -193,6 +200,9 @@
     }
     .repo-preview-image{
       @apply w-full h-full object-cover;
+    }
+    .about-me{
+      @apply justify-start overflow-hidden
     }
     /* Utilities */
     .text-responsive {
@@ -223,62 +233,43 @@
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
       }
       li{
-        @apply block px-4 py-2 rounded
+        @apply block px-4 py-2 rounded;
       }
       button{
-        @apply ring-0 bg-transparent h-full
+        @apply ring-0 bg-transparent h-full;
       }
     }
     footer{
-      @apply text-center
+      @apply text-center;
     }
 
   }
 
-  @media (prefers-color-scheme:light){
+
   header,footer{
-  @apply bg-neutral-dark text-neutral-light;
+  @apply bg-neutral-dark text-neutral-light dark:bg-neutral dark:text-neutral-dark;
   }
-    span{
-      @apply bg-neutral-light
-    }
+
     li{
-      @apply hover:bg-primary-dark
+      @apply hover:bg-secondary-dark dark:hover:bg-tertiary transition-colors ease-in-out transition;
     }
     a{
-      @apply hover:text-primary-light
+      @apply text-secondary hover:text-secondary-light;
     }
   .nav-burger{
-    @apply bg-neutral-dark
+    @apply bg-neutral-dark dark:bg-neutral;
   }
   #tech-scroller{
-    @apply bg-slate-500 ring-neutral-dark;
+    @apply bg-tertiary-light ring-neutral-dark dark:bg-tertiary-dark dark:ring-neutral;
     span{
-      @apply bg-transparent text-neutral-dark
+      @apply bg-transparent text-neutral-dark font-extrabold dark:text-neutral-light;
+    }
+    p:nth-child(1){
+      @apply text-secondary-dark dark:text-secondary-light 
     }
   }
-  }
-  @media (prefers-color-scheme:dark){
-    header,footer{
-    @apply bg-neutral text-neutral-dark;
-  }
-    span{
-      @apply bg-neutral-dark;
-    }
-    li{
-      @apply hover:bg-primary-light;
-    }
-    a{
-      @apply hover:text-primary-dark;
-    }
-    .nav-burger{
-      @apply bg-neutral;
-    }
-    #tech-scroller{
-      @apply ring-neutral;
-    }
-  }
-
+ 
+  
 /* Tech scroller */
 #tech-scroller{
   @apply flex flex-col align-middle overflow-hidden ring-4 rounded-lg mx-auto my-5 md:w-4/5 xl:w-3/6;  
@@ -291,21 +282,12 @@
   @apply flex flex-row  flex-grow-0 flex-shrink-0 my-4 items-center align-middle justify-start whitespace-nowrap;
 }
 
-
-/* #lang-container{
-  @apply animate-slide-left w-max
-}
-
-#frameLib-container{
-@apply animate-slide-right w-max
-}
- */
 .tech-container div>p{
   @apply text-center text-sm font-medium ;
 }
 
 .tech-item{
-  @apply flex flex-col items-center text-slate-100 w-12 m-4
+  @apply flex flex-col items-center text-slate-100 w-12 m-4;
 }
 
 .tech-icon {
