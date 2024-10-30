@@ -49,8 +49,8 @@ export default {
         },
       },
       animation: {
-        "slide-left": "slide-left 20s linear infinite",
-        "slide-right": "slide-right 20s reverse linear infinite",
+        "slide-left": "slide-left 50s linear infinite",
+        "slide-right": "slide-right 60s reverse linear infinite",
       },
     },
   },
