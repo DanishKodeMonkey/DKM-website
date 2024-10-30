@@ -31,19 +31,19 @@ export default function Index() {
           <img src={DKM} alt="danishKodeMonkey" className="avatar" />
         </div>
         <h3>
-          My name is <span className="text-sky-400">Daniel</span>
+          My name is <span className="highlight-blue">Daniel</span>
         </h3>
         <h4>
           I am a{" "}
-          <span className="text-amber-400">Full-stack web developer!</span>
+          <span className="highlight-amber">Full-stack web developer!</span>
         </h4>
         <p>
           I love creating{" "}
-          <span className="font-bold text-slate-100">interesting</span> and{" "}
-          <span className="font-bold text-slate-100">intuitive</span>{" "}
+          <span className="font-bold highlight-green">interesting</span> and{" "}
+          <span className="font-bold highlight-pink">intuitive</span>{" "}
           web solutions, cracking{" "}
-          <span className="font-bold text-red-500">challenges</span> and{" "}
-          <span className=" font-bold text-purple-500">learning</span>{" "}
+          <span className="font-bold highlight-red">challenges</span> and{" "}
+          <span className=" font-bold highlight-purple">learning</span>{" "}
           new things!
         </p>
         <TechScroller />
