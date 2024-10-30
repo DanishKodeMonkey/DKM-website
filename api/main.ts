@@ -67,6 +67,35 @@ router.get("/api/repos", async (context) => {
   }
 });
 
+router.get("/api/repos/:repoName", async(context) =>{
+  const owner:string = 'danishKodeMonkey'
+  const repo:string = context.params.repoName
+  
+try{
+  const response = await octokit.rest.repos.get({
+    owner,
+    repo,
+  });
+  const previewUrl = getPreviewImageUrl(owner, repo);
+  const imageExists = await checkPreviewImageExists(previewUrl);
+  
+ context.response.body = {
+    id: response.data.id,
+    name: response.data.name,
+    html_url: response.data.html_url,
+    description: response.data.description,
+    created_at: response.data.created_at, // parse to Date
+    updated_at: response.data.updated_at,
+    preview_image: imageExists ? previewUrl : null,
+  };
+
+
+}catch (error) {
+  console.error("Error fetching GitHub repo: ", error);
+  context.response.status = 500;
+  context.response.body = { error: "Failed to fetch repos" }
+}})
+
 /* App */
 const app = new Application();
 app.use(oakCors());
