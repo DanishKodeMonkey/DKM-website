@@ -12,14 +12,13 @@ export const checkPreviewImageExists = async (
     const response = await fetch(url);
 
     if (response.status === 404) {
-      console.log(`${url} does not have a preview image (404 Not Found)`);
+
       return false; // Not found
     }
 
-    console.log(`${url} has a preview image`);
-    return response.ok; // Checks for other successful responses
+    return response.ok; 
   } catch (error) {
     console.error(`Error checking image existence for ${url}:`, error);
-    return false; // Return false if there's an error
+    return false; 
   }
 };

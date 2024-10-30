@@ -29,14 +29,20 @@ router.get("/api/comments/:commentId", (context) => {
 
 /* Github (portfolio) */
 router.get("/api/repos", async (context) => {
+  const page = parseInt(context.request.url.searchParams.get("page") || "1")
+  const per_page = parseInt(context.request.url.searchParams.get("per_page") || "10")
+
   try {
+    console.log(`Attempting to fetch repos: page${page}, per_page${per_page}`);
+    
     // fetch user repos
     const response = await octokit.repos.listForAuthenticatedUser({
-      per_page: 10,
+      per_page,
+      page,
     });
 
     /* preview image check */
-    const repos = await Promise.all(response.data.map(async (repo) => {
+      const repos = await Promise.all(response.data.map(async (repo) => {
       const previewUrl = getPreviewImageUrl(repo.owner.login, repo.name);
       const imageExists = await checkPreviewImageExists(previewUrl);
 
@@ -51,7 +57,9 @@ router.get("/api/repos", async (context) => {
       };
     }));
 
-    context.response.body = repos;
+
+    
+    context.response.body = repos
   } catch (error) {
     console.error("Error fetching GitHub repos: ", error);
     context.response.status = 500;
