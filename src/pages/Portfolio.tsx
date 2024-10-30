@@ -34,13 +34,14 @@ const Portfolio: React.FC = () => {
 
   return (
     <main>
-      <div className="portfolio">
+      <div className="portfolio padding-responsive">
         <h1>My projects</h1>
         <h2 className="text-xs text-slate-500">
           <a href="https://docs.github.com/en/rest?apiVersion=2022-11-28">
             Pulled from GitHub using GitHub API and octokit
           </a>
         </h2>
+      </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {repos.map((repo: Repo) => (
             <div key={repo.id} className="card">
@@ -83,7 +84,7 @@ const Portfolio: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+
     </main>
   );
 };
