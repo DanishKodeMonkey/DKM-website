@@ -26,17 +26,17 @@ export default function About() {
       <div className="grid-layout">
         <div className="card about-me">
           <h4 className="highlight-red">Autodidact</h4>
-          <p>experience creating web-based solutions across the full-stack spectrum.</p>
+          <p>Continuous self-learning and constant urge for improvement, keeping up with the latest industry tech</p>
         </div>
         <div className="card about-me">
           <h4 className="highlight-purple">A solid foundation of</h4>
 
-          <p>vanilla JavaScript, CSS, and HTML</p>
+          <p>Vast experience founded on vanilla JavaScript, CSS, and HTML</p>
         </div>
         <div className="card about-me">
           <h4 className="highlight-teal">front-end</h4>
           <p>
-            I have developed and
+            Developed and
             completed projects including, but not limited to, dashboards, blogs, and
             browser-based games.
           </p>
@@ -44,7 +44,7 @@ export default function About() {
         <div className="card about-me">
           <h4 className="highlight-amber">back-end</h4>
           <p>
-            I am adept at
+            Adept at
             processing data, managing
             authentication.
             and
@@ -55,9 +55,7 @@ export default function About() {
         <div className="card about-me">
           <h4 className="highlight-pink">RESTful APIs</h4>
           <p>
-            Which allow me to
-            efficiently and safely manage the routing of data, requests, and
-            responses between the user and the server.
+            Effecient and safe management of data routing through tailored RESTful API solutions.
           </p>
         </div>
         <div className="card about-me">
@@ -65,37 +63,10 @@ export default function About() {
             Frameworks, tools, libraries
           </h4>
           <p>
-            Ensuring optimal performance and user experiences in all my
-            projects.
+            Experience in various libraries and frameworks including, but not limited to, React, Express, and postgreSQL
           </p>
         </div>
       </div>
-      {/*       <div className="text-start">
-        I have extensive ,
-        all built on .
-        <br /> <br />
-        On the{" "}
-
-        <br /> <br />
-        On the{" "}
-
-        <br /> <br />
-        Additionally, I have experience building custom{" "}
-
-        <br /> <br />
-        My expertise extends to utilizing various{" "}
-
-        <br /> <br />
-
-
-        <br /> <br />
-        In my spare time, I enjoy exploring new technologies, gaming, and
-        nerding out about tech. <br />
-
-        <br /> <br />
-        If you ever need someone to explain the intricacies of code or to help
-        troubleshoot your latest bug, I'm your go-to guy! ☕💻
-      </div> */}
     </div>
   );
 }
