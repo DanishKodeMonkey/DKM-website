@@ -69,7 +69,7 @@
   }
   
   button {
-    @apply bg-primary text-white hover:bg-primary-dark dark:bg-primary-light dark:text-neutral-dark dark:hover:bg-primary;
+    @apply bg-secondary-dark text-white hover:bg-secondary-light dark:bg-secondary-dark dark:text-highlight-light dark:hover:bg-secondary-light dark:hover:text-highlight-dark;
   }
   
   input,
@@ -224,6 +224,16 @@
     }
     .repo-preview-image{
       @apply w-full h-full object-cover;
+    }
+
+    .pagination{
+      @apply flex justify-center gap-5 my-10
+    }
+    .pagination-button{
+      @apply mx-0 my-1 text-responsive
+    }
+    .pagination-button:disabled{
+      @apply cursor-not-allowed bg-neutral-light
     }
     .about-me{
       @apply justify-start overflow-hidden

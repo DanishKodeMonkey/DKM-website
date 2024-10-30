@@ -2,34 +2,56 @@ import React, { useEffect, useState } from "react";
 import { Repo } from "../types.ts";
 import { useLoading } from "../contexts/LoadingContext.tsx";
 
+
 const Portfolio: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
-  const { setIsLoading } = useLoading();
+  const { isLoading, setIsLoading } = useLoading();
   const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1)
+  const perPage = 9;
 
   useEffect(() => {
-    setIsLoading(true);
-    const fetchRepos = async () => {
-      try {
-        const response = await fetch("/api/repos");
-        if (!response.ok) {
-          throw new Error("Failed to fetch repos");
-        }
-        const data = await response.json();
-        console.log(data);
+    fetchRepos(currentPage);
+  }, [currentPage]);
 
-        setRepos(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setIsLoading(false);
+  const fetchRepos = async (page: number) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`/api/repos?page=${page}&per_page=${perPage}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch repos");
       }
-    };
-    fetchRepos();
-  }, []);
+      const data = await response.json();
+
+      setRepos(data);
+
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (repos.length === perPage) {
+      setCurrentPage((prev) => prev + 1)
+    }
+  }
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1)
+    }
+  }
+
+
 
   if (error) {
     return <div>Error: {error}</div>;
+  }
+
+  if (isLoading) {
+    return (< p > Loading...</p >)
   }
 
   return (
@@ -84,7 +106,14 @@ const Portfolio: React.FC = () => {
             </div>
           ))}
         </div>
-
+      <div className="pagination">
+        <button className="pagination-button" onClick={handlePreviousPage} disabled={currentPage === 1}>
+          Previous
+        </button>
+        <button className="pagination-button" onClick={handleNextPage} disabled={repos.length < perPage}>
+          Next
+        </button>
+      </div>
     </main>
   );
 };
