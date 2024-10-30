@@ -88,9 +88,9 @@
   }
   
   .card-title,
-  .card-description,
-  .card-date {
-    @apply text-neutral-dark dark:text-neutral-100;
+  .card-description
+  {
+    @apply text-neutral-dark dark:text-neutral-100 py-2;
   }
   
   /* Highlights */
@@ -223,7 +223,7 @@
       @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
     }
     .repo-preview{
-      @apply max-w-36 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
+      @apply max-w-36 h-40 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
     }
     .repo-preview-image{
       @apply w-full h-full object-cover;
@@ -308,7 +308,7 @@
   
 /* Tech scroller */
 #tech-scroller{
-  @apply flex flex-col overflow-hidden ring-4 rounded-lg mx-auto my-5 md:w-4/5 xl:w-3/6;  
+  @apply flex flex-col overflow-hidden ring-4 rounded-lg mx-auto my-10 md:w-4/5 xl:w-3/6;  
 }
 
 .tech-scroll-title{
@@ -330,3 +330,6 @@
   @apply bg-neutral rounded-full w-10 p-1;
 }
 
+.huskat{
+ @apply pb-10
+}
