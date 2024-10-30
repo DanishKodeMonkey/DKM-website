@@ -1,12 +1,21 @@
-import _React, { useState } from "react";
+import _React, { useState, useEffect } from "react";
 // @ts-ignore: Deno vite react hates image imports
 
-import { Link } from "react-router-dom";
+
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [selectedLink, setSelectedLink] = useState<string | null>(null);
+  const [selectedLink, setSelectedLink] = useState<string | null>(null)
+  const location = useLocation()
 
+  useEffect(() => {
+
+    const currentPath = location.pathname.slice(1)
+    const activeLink = currentPath.charAt(0).toLocaleUpperCase() + currentPath.slice(1) || "Home"
+
+    setSelectedLink(activeLink)
+  }, [location.pathname]);
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
