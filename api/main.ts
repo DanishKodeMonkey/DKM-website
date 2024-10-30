@@ -29,21 +29,23 @@ router.get("/api/comments/:commentId", (context) => {
 
 /* Github (portfolio) */
 router.get("/api/repos", async (context) => {
-  const page = parseInt(context.request.url.searchParams.get("page") || "1")
-  const per_page = parseInt(context.request.url.searchParams.get("per_page") || "10")
+  const page = parseInt(context.request.url.searchParams.get("page") || "1");
+  const per_page = parseInt(
+    context.request.url.searchParams.get("per_page") || "10",
+  );
 
   try {
     console.log(`Attempting to fetch repos: page${page}, per_page${per_page}`);
-    
+
     // fetch user repos
     const response = await octokit.repos.listForAuthenticatedUser({
       per_page,
       page,
     });
     /* preview image check */
-      const repos = await Promise.all(response.data.map(async (repo) => {
+    const repos = await Promise.all(response.data.map(async (repo) => {
       const previewUrl = getPreviewImageUrl(repo.owner.login, repo.name);
-      const imageExists = await checkPreviewImageExists(previewUrl)
+      const imageExists = await checkPreviewImageExists(previewUrl);
       return {
         id: repo.id,
         name: repo.name,
@@ -55,9 +57,7 @@ router.get("/api/repos", async (context) => {
       };
     }));
 
-
-    
-    context.response.body = repos
+    context.response.body = repos;
   } catch (error) {
     console.error("Error fetching GitHub repos: ", error);
     context.response.status = 500;
@@ -65,34 +65,33 @@ router.get("/api/repos", async (context) => {
   }
 });
 
-router.get("/api/repos/:repoName", async(context) =>{
-  const owner:string = 'danishKodeMonkey'
-  const repo:string = context.params.repoName
-  
-try{
-  const response = await octokit.rest.repos.get({
-    owner,
-    repo,
-  });
-  const previewUrl = getPreviewImageUrl(owner, repo);
-  const imageExists = await checkPreviewImageExists(previewUrl);
-  
- context.response.body = {
-    id: response.data.id,
-    name: response.data.name,
-    html_url: response.data.html_url,
-    description: response.data.description,
-    created_at: response.data.created_at, // parse to Date
-    updated_at: response.data.updated_at,
-    preview_image: imageExists ? previewUrl : null,
-  };
+router.get("/api/repos/:repoName", async (context) => {
+  const owner: string = "danishKodeMonkey";
+  const repo: string = context.params.repoName;
 
+  try {
+    const response = await octokit.rest.repos.get({
+      owner,
+      repo,
+    });
+    const previewUrl = getPreviewImageUrl(owner, repo);
+    const imageExists = await checkPreviewImageExists(previewUrl);
 
-}catch (error) {
-  console.error("Error fetching GitHub repo: ", error);
-  context.response.status = 500;
-  context.response.body = { error: "Failed to fetch repos" }
-}})
+    context.response.body = {
+      id: response.data.id,
+      name: response.data.name,
+      html_url: response.data.html_url,
+      description: response.data.description,
+      created_at: response.data.created_at, // parse to Date
+      updated_at: response.data.updated_at,
+      preview_image: imageExists ? previewUrl : null,
+    };
+  } catch (error) {
+    console.error("Error fetching GitHub repo: ", error);
+    context.response.status = 500;
+    context.response.body = { error: "Failed to fetch repos" };
+  }
+});
 
 /* App */
 const app = new Application();

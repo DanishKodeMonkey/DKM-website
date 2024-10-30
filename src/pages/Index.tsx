@@ -39,7 +39,8 @@ export default function Index() {
         </h4>
         <p>
           I love creating{" "}
-          <span className="font-bold highlight-green">interesting</span> and{" "}
+          <span className="font-bold highlight-green">interesting</span> and
+          {" "}
           <span className="font-bold highlight-pink">intuitive</span>{" "}
           web solutions, cracking{" "}
           <span className="font-bold highlight-red">challenges</span> and{" "}

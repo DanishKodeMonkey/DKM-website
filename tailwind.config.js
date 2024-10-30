@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js, ts, jsx,tsx}"],
-  darkMode: 'media',
+  darkMode: "media",
   theme: {
     extend: {
-      fontFamily:{
-        header: ['CyberAlert', 'sans-serif'],
+      fontFamily: {
+        header: ["CyberAlert", "sans-serif"],
       },
       colors: {
         primary: {
@@ -24,12 +24,12 @@ export default {
           /* For tertiary elements, cards, backgrounds on backgrounds, etc. */
           DEFAULT: "#ffed00",
           light: "#fff24c",
-          dark: "#998e00"
+          dark: "#998e00",
         },
         highlight: {
           DEFAULT: "#37e2d5",
           light: "#73eae1",
-          dark: "#21877f"
+          dark: "#21877f",
         },
         neutral: {
           /* represents backgrounds-borders and text: Slate pallette */
