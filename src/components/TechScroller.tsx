@@ -95,7 +95,7 @@ const TechScroller: React.FC = () => {
       <div
         className="tech-container animate-slide-left"
         id="lang-container"
-        style={{ width: `${langTranslate * 5}px * 5` }}
+
       >
         {/* Infinite stack of languages */}
         {[...languages, ...languages, ...languages, ...languages, ...languages]
@@ -106,7 +106,7 @@ const TechScroller: React.FC = () => {
       <div
         className="tech-container animate-slide-right"
         id="frameLib-container"
-        style={{ width: `${frameLibTranslate * 5}px` }}
+
       >
         {/* Infinite stack of frameworks and libraries */}
         {[
