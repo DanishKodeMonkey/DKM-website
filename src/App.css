@@ -1,26 +1,31 @@
+@font-face{
+  font-family:'CyberAlert';
+  src:url('./public/assets/fonts/CyberAlert-xRv8j.otf') format('opentype')
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components{
   .body-background-dark{
-    @apply bg-gradient-to-tr from-neutral-800 from-20% via-neutral-900 via-50% to-neutral-800 to-80%;
+    @apply bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-slate-800 from-10% via-slate-800 via-50% to-slate-900;
   }
   .body-background-light{
-    @apply bg-gradient-to-tr from-neutral-400 from-20% via-neutral-300 via-60% to-neutral-300 to-80%;
+    @apply bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-neutral-500 from-20% via-neutral-300 via-60% to-neutral-400 to-80%;
   }
   .hf-background-dark{
-    @apply bg-gradient-to-bl from-neutral-500 from-5% via-neutral-600 via-80% to-95% to-neutral-500 ring-4 ring-secondary-dark ;
+    @apply bg-gradient-to-bl from-neutral-500 from-5% via-neutral-600 via-80% to-95% to-neutral-500 ring-4 ring-highlight-light shadow-md shadow-highlight-light;
   }
   .hf-background-light{
-    @apply bg-gradient-to-bl from-neutral-700 from-5% via-neutral-800 via-80%  to-95% to-neutral-700 ring-4 ring-secondary-light;
+    @apply bg-gradient-to-bl from-neutral-700 from-5% via-neutral-800 via-80%  to-95% to-neutral-700 ring-4 ring-highlight-light shadow-md shadow-highlight-light;
   }
   .card-background-dark{
-    @apply bg-gradient-to-tl from-tertiary from-5% via-tertiary-dark via-40% to-95% to-tertiary ring-4 ring-secondary-dark;
+    @apply bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-neutral from-20% via-slate-900 via-70% hover:via-65% to-highlight-light to-95%;
   }
   .card-background-light{
-    @apply bg-gradient-to-br from-tertiary from-5% via-indigo-500 via-20%  to-tertiary to-95% ring-4 ring-secondary-light;
+    @apply bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-neutral from-20% via-slate-400 via-70% hover:via-65% to-highlight-light to-95%;
   }
+
 }
 
 @layer base {
@@ -52,7 +57,7 @@
 
   /* Ensuring consistent font rendering */
   body {
-    @apply antialiased body-background-light text-neutral-dark dark:body-background-dark dark:text-neutral-light;/* Default styles */
+    @apply antialiased body-background-light text-neutral-dark dark:body-background-dark dark:text-neutral-light;
     /* global transition for colors (dark light mode switch) */
     @apply transition-colors duration-300 ease-in-out; 
   }
@@ -71,14 +76,15 @@
   textarea,
   select {
     @apply border-neutral-light focus:border-primary focus:ring-primary dark:border-neutral-dark dark:focus:border-primary-light dark:focus:ring-primary-light;
+
   }
   
   .card {
-    @apply card-background-light border-neutral-dark dark:card-background-dark dark:text-neutral-light dark:border-neutral-light;
+    @apply card-background-light border-neutral-dark dark:card-background-dark dark:text-neutral-light dark:border-neutral-light  ring-2 ring-highlight-light transition-all duration-300 ease-in-out;
   }
   
   .card-button {
-    @apply bg-secondary text-neutral-100 hover:bg-secondary-light hover:text-neutral-700 dark:bg-secondary dark:hover:bg-secondary-light dark:hover:text-secondary-dark dark:text-neutral-100;
+    @apply bg-secondary-dark text-neutral-100 hover:bg-secondary-light hover:text-neutral-700 dark:bg-secondary-dark dark:hover:bg-secondary-light dark:hover:text-neutral-dark dark:text-neutral-100;
   }
   
   .card-title,
@@ -197,7 +203,7 @@
     }
 
     .card {
-      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-lg shadow-lg transition-all  ease-in-out  hover:shadow-xl hover:shadow-neutral hover:scale-110 lg:hover:scale-125  hover:ring-4 hover:z-10;
+      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 rounded-xl shadow-highlight-light shadow-lg transition-all  ease-in-out  hover:shadow-xl  hover:scale-110 lg:hover:scale-125  hover:border-highlight-light  hover:ring-4 hover:z-10;
     }
 
     .card-title {
@@ -251,7 +257,7 @@
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
       }
       li{
-        @apply block px-4 py-2 rounded;
+        @apply block px-4 rounded ;
       }
       button{
         @apply ring-0 bg-transparent h-full;
@@ -268,46 +274,46 @@
   @apply hf-background-light text-neutral-light dark:hf-background-dark dark:text-neutral-dark max-lg:py-4;
   }
     li{
-      @apply hover:bg-secondary-dark max-lg:dark:hover:bg-secondary transition-colors ease-in-out transition;
+      @apply  transition-colors ease-in-out transition;
     }
     a{
-      @apply dark:text-secondary-light text-green-950 hover:text-secondary-light;
+      @apply hover:bg-secondary-light dark:text-secondary-light text-black hover:text-secondary-dark;
     }
   .nav-burger{
     @apply bg-neutral-dark dark:bg-neutral-light;
   }
   #tech-scroller{
-    @apply bg-tertiary-light ring-neutral-dark dark:bg-tertiary-dark dark:ring-neutral;
+    @apply  ring-highlight shadow-inner shadow-highlight-light;
     span{
-      @apply bg-transparent text-neutral-dark font-extrabold dark:text-neutral-light;
+      @apply bg-transparent text-neutral-dark font-extrabold dark:text-highlight-light;
     }
     p:nth-child(1){
-      @apply text-secondary-dark dark:text-secondary-light 
+      @apply text-highlight-dark dark:text-highlight-light
     }
   }
  
   
 /* Tech scroller */
 #tech-scroller{
-  @apply flex flex-col align-middle overflow-hidden ring-4 rounded-lg mx-auto my-5 md:w-4/5 xl:w-3/6;  
+  @apply flex flex-col overflow-hidden ring-4 rounded-lg mx-auto my-5 md:w-4/5 xl:w-3/6;  
 }
 
 .tech-scroll-title{
-  @apply ml-4 font-medium;
+  @apply font-medium;
 }
 .tech-container{
-  @apply flex flex-row  flex-grow-0 flex-shrink-0 my-4 items-center align-middle justify-start whitespace-nowrap;
+  @apply flex flex-row whitespace-nowrap gap-1 w-max;
 }
 
 .tech-container div>p{
-  @apply text-center text-sm font-medium ;
+  @apply text-center text-sm font-medium;
 }
 
 .tech-item{
-  @apply flex flex-col items-center text-slate-100 w-12 m-4;
+  @apply flex flex-col items-center justify-center w-24 h-24 min-w-24;
 }
 
 .tech-icon {
-  @apply w-12 h-12;
+  @apply bg-neutral rounded-full w-10 p-1;
 }
 
