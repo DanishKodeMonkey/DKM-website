@@ -47,29 +47,10 @@ export default function Index() {
           <span className=" font-bold highlight-purple">learning</span>{" "}
           new things!
         </p>
+
         <TechScroller />
-      </div>
-      <div className="container">
-        <h3>
-          Have a look at what people think of this site!
-        </h3>
-        <p>
-          Click the comments to see some details!
-        </p>
-        <div className="flex flex-col gap-5 my-4">
-          {comments.map((comment: Comment) => {
-            return (
-              <div className="card" key={comment.id}>
-                <Link
-                  to={`/comments/${comment.id}`}
-                  className="comment"
-                >
-                  {comment.name}: {comment.message}
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+
+
       </div>
     </>
   );

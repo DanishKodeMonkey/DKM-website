@@ -11,6 +11,9 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ repo }) => (
       <div className="flex justify-between">
         <div className="w-1/2">
           <h2 className="card-title">{repo.name}</h2>
+          <p className=" text-sm card-description">
+            {repo.description || "No description available"}
+          </p>
         </div>
         <div className="repo-preview ring-2 flex items-center justify-center w-1/2">
           {repo.preview_image
@@ -24,16 +27,6 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ repo }) => (
             : <p className="text-base">No Preview Available</p>}
         </div>
       </div>
-      <p className="card-date">
-        Created at: {new Date(repo.created_at).toLocaleDateString()}
-      </p>
-      <p className="card-date">
-        Updated at: {new Date(repo.updated_at).toLocaleDateString()}
-      </p>
-
-      <p className="card-description">
-        {repo.description || "No description available"}
-      </p>
     </div>
     <a
       href={repo.html_url}

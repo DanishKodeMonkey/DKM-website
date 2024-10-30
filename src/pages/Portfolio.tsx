@@ -3,6 +3,16 @@ import { Repo } from "../types.ts";
 import { useLoading } from "../contexts/LoadingContext.tsx";
 import RepositoryCard from "../components/RepositoryCard.tsx";
 
+/* HUSKAT
+
+Replace "previous next" buttons with "load more" and append
+list of repos with more repos
+
+MORE REPOS
+
+
+
+*/
 const Portfolio: React.FC = () => {
   const [featuredRepos, setFeaturedRepos] = useState<Repo[]>([]);
   const [repos, setRepos] = useState<Repo[]>([]);
@@ -91,7 +101,7 @@ const Portfolio: React.FC = () => {
           </h2>
         </div>
         <div>
-          <h2>Featured Projects</h2>
+          <h2 className="pb-5">Featured Projects</h2>
           <div className="repos-container">
             {featuredRepos.map((repo: Repo) => (
               <RepositoryCard key={repo.id} repo={repo} />
@@ -99,7 +109,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
         <div>
-          <h2>All my repos</h2>
+          <h2 className="pb-5">All my repos</h2>
           <div className="repos-container">
             {isLoading ? <p>Loading...</p> : (
               repos.map((repo: Repo) => (

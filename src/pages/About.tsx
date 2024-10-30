@@ -1,27 +1,27 @@
 import _React from "react";
-// @ts-ignore: Deno hates images
-import DKM from "../public/assets/mm12sSNz.jpg";
 
 export default function About() {
   return (
     <div className="text-center py-10">
-      <h3>
-        Hello! 👋 <br />
-        My name is <span className="highlight-blue">Daniel</span>
-      </h3>
-      <h4>
-        I am a{"  "}
-        <span className="highlight-yellow">Full-stack developer</span>, going on
-        3 years. <br />{" "}
-        I am on an eternal quest of continuos learning, With a focus on{"  "}
-        <span className="highlight-green">
-          web technologies and development
-        </span>
-      </h4>
+      <div className="huskat">
+        <h3>
+          Hello! 👋 <br />
+          My name is <span className="highlight-blue">Daniel</span>
+        </h3>
+        <h4>
+          I am a{"  "}
+          <span className="highlight-yellow">Full-stack developer</span>, going
+          on 3 years. <br />{" "}
+          I am on an eternal quest of continuos learning, With a focus on{"  "}
+          <span className="highlight-green">
+            web technologies and development
+          </span>
+        </h4>
+      </div>
       <br />
       <div className="grid-layout gap-20">
         <div className="card about-me">
-          <h4 className="highlight-red">Autodidact</h4>
+          <h4 className="highlight-red">Self-taught</h4>
           <p>
             Continuous self-learning and constant urge for improvement, keeping
             up with the latest industry tech
@@ -63,7 +63,17 @@ export default function About() {
             limited to, React, Express, and postgreSQL
           </p>
         </div>
+
       </div>
+      <p className="w-1/2 mx-auto mt-20">
+        Fun facts:
+        <ul className="text-red-500">
+          <li>Too passionate about Deno</li>
+          <li>Loves gaming</li>
+          <li>Runs like a champ</li>
+          <li></li>
+        </ul>
+      </p>
     </div>
   );
 }
