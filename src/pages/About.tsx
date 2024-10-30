@@ -4,11 +4,7 @@ import DKM from "../public/assets/mm12sSNz.jpg";
 
 export default function About() {
   return (
-    <div className="text-center responsive-text py-10">
-      <h1>About me:</h1>
-      <div className="flex align-middle justify-center">
-        <img src={DKM} alt="Danish kode Monkey" className="avatar" />
-      </div>
+    <div className="text-center py-10">
       <h3>
         Hello! 👋 <br />
         My name is <span className="highlight-blue">Daniel</span>
@@ -23,7 +19,7 @@ export default function About() {
 
       </h4>
       <br />
-      <div className="grid-layout">
+      <div className="grid-layout gap-20">
         <div className="card about-me">
           <h4 className="highlight-red">Autodidact</h4>
           <p>Continuous self-learning and constant urge for improvement, keeping up with the latest industry tech</p>

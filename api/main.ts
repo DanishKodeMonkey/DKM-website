@@ -40,12 +40,10 @@ router.get("/api/repos", async (context) => {
       per_page,
       page,
     });
-
     /* preview image check */
       const repos = await Promise.all(response.data.map(async (repo) => {
       const previewUrl = getPreviewImageUrl(repo.owner.login, repo.name);
-      const imageExists = await checkPreviewImageExists(previewUrl);
-
+      const imageExists = await checkPreviewImageExists(previewUrl)
       return {
         id: repo.id,
         name: repo.name,
