@@ -23,19 +23,22 @@ export default function About() {
         </h3>
         <h4>
           I am a{"  "}
-          <span className="highlight-yellow">Full-stack developer</span>, going
-          on 3 years. <br />{" "}
-          I am on an eternal quest of continuos learning, With a focus on{"  "}
+          <span className="highlight-yellow">Full-stack developer</span>        </h4><h4>
+          going
+          on 3 years. <br />with a focus on {" "} <br />
+        </h4>
+        <h5>
           <span className="highlight-green">
             web technologies and development
           </span>
-        </h4>
+        </h5>
+
       </div>
       <br />
-      <div className="grid-layout gap-20">
+      <div className="grid-layout gap-10 md:gap-20">
         <div className="card about-me">
-          <div className="flex justify-between mb-5">
-            <h4 className="highlight-red">Self-taught</h4>
+          <div className="flex justify-around md:justify-between mb-5">
+            <h4 className="highlight-red max-md:self-center">Self-taught</h4>
             <img src={selfTaughtGif} alt="self taught" className="about-gif" />
           </div>
           <p>
@@ -44,16 +47,16 @@ export default function About() {
           </p>
         </div>
         <div className="card about-me">
-          <div className="flex justify-between mb-5">
-            <h4 className="highlight-purple">A solid foundation of</h4>
+          <div className="flex justify-around md:justify-between mb-5">
+            <h4 className="highlight-purple max-md:self-center">Solid foundation</h4>
             <img src={foundationGif} alt="A solid foundation" className="about-gif" />
           </div>
 
           <p>Vast experience founded on vanilla JavaScript, CSS, and HTML</p>
         </div>
         <div className="card about-me">
-          <div className="flex justify-between mb-5">
-            <h4 className="highlight-teal">front-end</h4>
+          <div className="flex justify-around md:justify-between mb-5">
+            <h4 className="highlight-teal max-md:self-center">Front-end</h4>
             <img src={frontEndGif} alt="Frontend" className="about-gif" />
           </div>
           <p>
@@ -62,8 +65,8 @@ export default function About() {
           </p>
         </div>
         <div className="card about-me">
-          <div className="flex justify-between mb-5">
-            <h4 className="highlight-amber">back-end</h4>
+          <div className="flex justify-around md:justify-between mb-5">
+            <h4 className="highlight-amber max-md:self-center">Back-end</h4>
             <img src={backEndGif} alt="Backend" className="about-gif" />
           </div>
           <p>
@@ -73,8 +76,8 @@ export default function About() {
           </p>
         </div>
         <div className="card about-me">
-          <div className="flex justify-between mb-5">
-            <h4 className="highlight-pink">RESTful APIs</h4>
+          <div className="flex justify-around md:justify-between mb-5">
+            <h4 className="highlight-pink max-md:self-center">RESTful APIs</h4>
             <img src={apiGif} alt="API" className="about-gif" />
           </div>
           <p>
@@ -83,8 +86,8 @@ export default function About() {
           </p>
         </div>
         <div className="card about-me">
-          <div className="flex justify-between mb-5">
-            <h4 className="highlight-orange">
+          <div className="flex justify-around md:justify-between mb-5">
+            <h4 className="highlight-orange max-md:self-center">
               Frameworks, tools, libraries
             </h4>
             <img src={frameworksGif} alt="frameworks" className="about-gif" />
@@ -96,7 +99,7 @@ export default function About() {
         </div>
 
       </div>
-      <div className="w-1/2 mx-auto mt-20 p-5 border border-highlight-light rounded-lg shadow-inner shadow-highlight-light">
+      <div className="w-full md:w-1/2 mx-auto mt-20 p-5 border border-highlight-light rounded-lg shadow-inner shadow-highlight-light">
         <h4 className="text-lg font-bold mb-3">Fun Facts:</h4>
         <ul className="list-disc list-inside">
           <li className="highlight-green">Too passionate about Dinosaurs in code</li>

@@ -13,10 +13,12 @@ export default function Index() {
     <>
       <div className="text-center responsive-text">
 
-        <div className="flex justify-center">
-          <img src={DKM} alt="danishKodeMonkey" className="avatar" />
-          <div className="flex-col mt-40">
-            <h1>Hello there! 👋</h1>
+        <div className="flex flex-col md:flex-row">
+          <img src={DKM} alt="danishKodeMonkey" className="avatar max-md:self-center" />
+          <div className="flex flex-col justify-end lg:justify-end xl:justify-normal xl:mt-52 text-center">
+            <div className="flex justify-center">
+              <h1>Hello there! </h1><h1>👋</h1>
+            </div>
             <h2>
               My name is <span className="highlight-blue">Daniel</span>
             </h2>
@@ -24,17 +26,28 @@ export default function Index() {
               I am a{" "}
               <span className="highlight-amber">Full-stack web wizard!</span>
             </h3>
+
           </div>
+
         </div>
 
-        <p>
-          I am on a eternal quest of{" "}
-          <span className="highlight-green">continuous learning</span>.
-          <br />
-          <span className="highlight-pink">Fighting epic battles</span> against <span className="highlight-red">Errors and bugs</span>{" "}
-          <br />
-          While crafting <span className="highlight-yellow">legendary websites</span>, <span className="highlight-green">backend servers </span>and <span className="highlight-red">restful-APIs!</span>
-        </p>
+        <div>
+          <p>
+            I am on a eternal quest of{" "}
+            <span className="highlight-green">continuous learning</span>.
+          </p>
+          <br className="mb-2" />
+          <p>Fighting  <span className="highlight-pink">epic</span>  battlesagainst <span className="highlight-red">Errors and bugs</span>{" "}</p>
+          <br className="mb-2" />
+          <p>
+            While crafting <span className="highlight-yellow">legendary websites</span>, <span className="highlight-green">backend servers </span>and <span className="highlight-red">restful-APIs!</span>
+          </p>
+          <div className="flex flex-col md:hidden">
+            |<br />
+            V
+
+          </div>
+        </div>
 
 
         <TechScroller />
