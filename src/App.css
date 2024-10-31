@@ -1,6 +1,6 @@
 @font-face{
-  font-family:'CyberAlert';
-  src:url('./public/assets/fonts/CyberAlert-xRv8j.otf') format('opentype')
+  font-family:'Moonstrike-nRqzP';
+  src:url('./public/assets/fonts/Moonstrike-nRqzP.otf')
 }
 @tailwind base;
 @tailwind components;
@@ -254,10 +254,16 @@
       @apply p-4 md:p-6 lg:p-8;
     }
     .avatar{
-      @apply w-1/3 h-auto rounded-full content-center m-10 ring-4
+      @apply w-1/4 h-auto rounded-full content-center m-10 ring-4;
     }
     .logo{
-      @apply w-8 md:w-12 lg:w-24 ring-2 md:ring-4 rounded-xl mr-2
+      @apply w-8 md:w-12 lg:w-24 ring-2 md:ring-4 rounded-xl mr-2;
+    }
+    .screenshot{
+      @apply w-2/3 self-center rounded-3xl;
+    }
+    .about-gif{
+      @apply inline-block w-20 h-20 mr-2 bg-neutral-light ring-highlight-light ring-2 rounded-full;
     }
 
     /* COMPONENT BASE STYLING */
@@ -296,7 +302,7 @@
     @apply bg-neutral-dark dark:bg-neutral-light;
   }
   #tech-scroller{
-    @apply  ring-highlight shadow-inner shadow-highlight-light;
+    @apply  ring-highlight shadow-inner shadow-highlight-light pt-4;
     span{
       @apply bg-transparent text-neutral-dark font-extrabold dark:text-highlight-light;
     }
@@ -308,7 +314,7 @@
   
 /* Tech scroller */
 #tech-scroller{
-  @apply flex flex-col overflow-hidden ring-4 rounded-lg mx-auto my-10 md:w-4/5 xl:w-3/6;  
+  @apply flex flex-col overflow-hidden ring-4 rounded-lg mx-auto my-2 md:w-4/5 xl:w-3/6;  
 }
 
 .tech-scroll-title{
@@ -333,3 +339,4 @@
 .text-container{
  @apply pb-10
 }
+
