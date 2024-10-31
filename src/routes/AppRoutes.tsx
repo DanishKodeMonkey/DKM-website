@@ -14,7 +14,7 @@ export const routes: RouteObject[] = [
   { path: "/", element: <Index /> },
   { path: "/comments/:selectedComment", element: <CommentDetails /> },
   { path: "/about", element: <About /> },
-  { path: "/contactMe", element: <ContactMe /> },
+  { path: "/contact", element: <ContactMe /> },
   { path: "/portfolio", element: <Portfolio /> },
   // Redirect for unknown paths
   { path: "*", element: <Navigate to="/" replace /> },
