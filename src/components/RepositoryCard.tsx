@@ -11,11 +11,11 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ repo }) => (
       <div className="flex justify-between">
         <div className="w-1/2">
           <h2 className="card-title">{repo.name}</h2>
-          <p className=" text-sm card-description">
+          <p className="card-description">
             {repo.description || "No description available"}
           </p>
         </div>
-        <div className="repo-preview ring-2 flex items-center justify-center w-1/2">
+        <div className="repo-preview w-1/2">
           {repo.preview_image
             ? (
               <img

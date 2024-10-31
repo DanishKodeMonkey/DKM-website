@@ -80,7 +80,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <>
-      <div className="portfolio padding-responsive">
+      <div className="portfolio">
         <div>
           <h1>My projects</h1>
           <h2 className="text-xs text-slate-500">
