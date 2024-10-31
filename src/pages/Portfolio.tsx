@@ -3,16 +3,6 @@ import { Repo } from "../types.ts";
 import { useLoading } from "../contexts/LoadingContext.tsx";
 import RepositoryCard from "../components/RepositoryCard.tsx";
 
-/* HUSKAT
-
-Replace "previous next" buttons with "load more" and append
-list of repos with more repos
-
-MORE REPOS
-
-
-
-*/
 const Portfolio: React.FC = () => {
   const [featuredRepos, setFeaturedRepos] = useState<Repo[]>([]);
   const [repos, setRepos] = useState<Repo[]>([]);
