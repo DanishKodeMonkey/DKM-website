@@ -3,7 +3,7 @@ import _React from "react";
 export default function About() {
   return (
     <div className="text-center py-10">
-      <div className="huskat">
+      <div className="text-container">
         <h3>
           Hello! 👋 <br />
           My name is <span className="highlight-blue">Daniel</span>
