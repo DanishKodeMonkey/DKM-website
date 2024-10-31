@@ -199,7 +199,7 @@
     }
 
     .portfolio{
-      @apply flex flex-col gap-20 max-w-7xl mx-auto p-6;
+      @apply flex flex-col gap-20 mx-auto;
     }
 
     .card {
@@ -207,10 +207,10 @@
     }
 
     .card-title {
-      @apply mb-2 text-xl font-semibold whitespace-normal text-ellipsis;
+      @apply text-xl font-semibold;
     }
     .card-description{
-      @apply text-base;
+      @apply  text-sm;
     }
 
     .card-date{
@@ -223,7 +223,7 @@
       @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
     }
     .repo-preview{
-      @apply max-w-36 h-40 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
+      @apply flex items-center max-w-28 min-w-28 max-h-28 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
     }
     .repo-preview-image{
       @apply w-full h-full object-cover;
