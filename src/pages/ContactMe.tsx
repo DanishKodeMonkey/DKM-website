@@ -13,8 +13,7 @@ export default function ContactMe() {
           Email, at Daniel_Runge_@hotmail.com
         </a>
         <a href="https://github.com/DanishKodeMonkey">DanishKodeMonkey on GitHub.com</a>
-        <a href="www.linkedin.com/in/daniel-ljung-runge-3ba014a1">Daniel Ljung Runge on LinkedIn</a>
-      </div>
+        <a href="https://www.linkedin.com/in/daniel-ljung-runge-3ba014a1">LinkedIn</a>      </div>
     </main>
   )
 }

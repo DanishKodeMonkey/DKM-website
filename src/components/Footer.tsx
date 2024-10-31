@@ -9,7 +9,7 @@ const Footer = () => {
 
         <a href="https://github.com/DanishKodeMonkey">GitHub.com</a>
 
-        <a href="www.linkedin.com/in/daniel-ljung-runge-3ba014a1">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/daniel-ljung-runge-3ba014a1">LinkedIn</a>
       </div>
       <div className="flex flex-col">
         <h4>This site is powered by:</h4>
