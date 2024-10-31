@@ -19,6 +19,8 @@ const Footer = () => {
         <a href="https://vite.dev/">Vite@React</a>
 
         <a href="https://tailwindcss.com/">TailwindCSS</a>
+
+        <a href="https://lordicon.com/">Icons by Lordicon.com</a>
       </div>
     </footer>
   );
