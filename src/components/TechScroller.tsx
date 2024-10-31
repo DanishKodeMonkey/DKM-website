@@ -90,8 +90,11 @@ const TechScroller: React.FC = () => {
   const frameLibTranslate = itemWidth * FrameworksAndLibraries.length;
 
   return (
+    <>
+      <h5 className="mt-12 mb-4">have a look at my bottomless, ever-expanding toolbox of magic swords! ⚔️</h5>
     <div id="tech-scroller">
-      <span className="tech-scroll-title">Tech stack:</span>
+
+        <span className="tech-scroll-title">Bottomless Toolbox (Do not feed)</span>
       <div
         className="tech-container animate-slide-left"
         id="lang-container"
@@ -119,7 +122,9 @@ const TechScroller: React.FC = () => {
         )}
       </div>
     </div>
+    </>
   );
+
 };
 
 export default TechScroller;
