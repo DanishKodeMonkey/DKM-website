@@ -1,4 +1,4 @@
-import { Application, route, Router } from "@oak/oak";
+import { Application, Router } from "@oak/oak";
 import { oakCors } from "@tajpouria/cors";
 import "jsr:@std/dotenv/load";
 import { Octokit } from "@octokit/rest";
