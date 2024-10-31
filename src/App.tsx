@@ -14,17 +14,19 @@ function AppRoutes() {
 
 function App() {
   return (
-    <Suspense fallback={<Loading />}>
+
       <div className="App">
         <BrowserRouter>
           <Header />
+        <Suspense fallback={<Loading />}>
           <main className="container">
             <AppRoutes />
           </main>
+        </Suspense>
           <Footer />
         </BrowserRouter>
       </div>
-    </Suspense>
+
   );
 }
 
