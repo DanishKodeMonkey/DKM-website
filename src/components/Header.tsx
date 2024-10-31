@@ -27,9 +27,9 @@ const Header = () => {
   return (
     <header>
       <div className="flex justify-center px-4">
-        <h1 className="font-header text-4xl md:text-5xl lg:text-6xl  text-neutral-200">
+        <Link to={"home"} className="font-header text-4xl md:text-5xl lg:text-6xl  text-neutral-200">
           Daniel_Runge
-        </h1>
+        </Link>
       </div>
 
       <nav>
