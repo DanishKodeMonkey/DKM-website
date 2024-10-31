@@ -50,7 +50,7 @@ const Header = () => {
           } lg:flex lg:items-center lg:opacity-100 lg:scale-100`}
         >
           <ul className="flex flex-col lg:flex-row lg:space-x-4 text-right">
-            {["Home", "Contact", "About", "Services", "Portfolio"].map((
+            {["Home", "Contact", "About", "Portfolio"].map((
               link,
             ) => (
               <li key={link}>
