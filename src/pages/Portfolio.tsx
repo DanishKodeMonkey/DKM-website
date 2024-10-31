@@ -18,7 +18,8 @@ const Portfolio: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
   const { isLoading, setIsLoading } = useLoading();
   const [error, setError] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [moreRepos, setMoreRepos] = useState<boolean>(true)
   const perPage = 9;
 
   useEffect(() => {
@@ -54,6 +55,8 @@ const Portfolio: React.FC = () => {
       console.error("Error fetching featured repos:", err);
     }
   };
+
+
   const fetchRepos = async (page: number) => {
     setIsLoading(true);
     try {
@@ -65,7 +68,9 @@ const Portfolio: React.FC = () => {
       }
       const data = await response.json();
 
-      setRepos(data);
+      setMoreRepos(data.length === perPage)
+
+      setRepos((prevRepos: Repo[]) => [...prevRepos, ...data]);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -73,17 +78,11 @@ const Portfolio: React.FC = () => {
     }
   };
 
-  const handleNextPage = () => {
-    if (repos.length === perPage) {
-      setCurrentPage((prev) => prev + 1);
-    }
+  const handleViewMore = () => {
+    setCurrentPage((prev: number) => prev + 1);
+
   };
 
-  const handlePreviousPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage((prev) => prev - 1);
-    }
-  };
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -111,27 +110,22 @@ const Portfolio: React.FC = () => {
         <div>
           <h2 className="pb-5">All my repos</h2>
           <div className="repos-container">
-            {isLoading ? <p>Loading...</p> : (
-              repos.map((repo: Repo) => (
-                <RepositoryCard key={repo.id} repo={repo} />
-              ))
-            )}
+            {repos.map((repo: Repo) => (<RepositoryCard key={repo.id} repo={repo} />))}
+
           </div>
+          {isLoading && (
+            <div className="text-center mx-auto my-20">
+              <p>Loading...</p>
+            </div>
+          )}
         </div>
         <div className="pagination">
           <button
             className="pagination-button"
-            onClick={handlePreviousPage}
-            disabled={currentPage === 1}
+            onClick={handleViewMore}
+            disabled={isLoading || !moreRepos}
           >
-            Previous
-          </button>
-          <button
-            className="pagination-button"
-            onClick={handleNextPage}
-            disabled={repos.length < perPage}
-          >
-            Next
+            {moreRepos ? "More repos!" : "I've run out of repos, to be continued!"}
           </button>
         </div>
       </div>
