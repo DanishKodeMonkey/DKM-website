@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        header: ["CyberAlert", "sans-serif"],
+        header: ["Moonstrike-nRqzP","sans-serif"],
       },
       colors: {
         primary: {
