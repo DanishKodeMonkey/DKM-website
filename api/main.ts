@@ -1,8 +1,9 @@
-import { Application, Router } from "@oak/oak";
+import { Application, route, Router } from "@oak/oak";
 import { oakCors } from "@tajpouria/cors";
 import "jsr:@std/dotenv/load";
 import { Octokit } from "@octokit/rest";
-import data from "./data.json" with { type: "json" };
+import routeStaticFilesFrom from "./routeStaticFilesFrom.ts";
+
 import { checkPreviewImageExists, getPreviewImageUrl } from "./utils.ts";
 
 /* Router  */
@@ -13,19 +14,6 @@ const octokit = new Octokit({
   auth: GITHUB_TOKEN,
 });
 
-/* Comments */
-router.get("/api/comments", (context) => {
-  context.response.body = data;
-});
-
-router.get("/api/comments/:commentId", (context) => {
-  if (!context?.params?.commentId) {
-    context.response.body = "No commend ID provided";
-  }
-  const comment = data.find((item) => item.id === context.params.commentId);
-
-  context.response.body = comment ?? "no comment found";
-});
 
 /* Github (portfolio) */
 router.get("/api/repos", async (context) => {
@@ -98,5 +86,6 @@ const app = new Application();
 app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
+app.use(routeStaticFilesFrom([`${Deno.cwd()}/dist`, `${Deno.cwd()}/src/public`]))
 
 await app.listen({ port: 8000 });
