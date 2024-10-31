@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build": "deno run -A  npm:vite build",
+    "serve": "deno task build && deno task dev:api",
     "dev": "deno task dev:api & deno task dev:vite",
     "dev:api": "deno run --allow-net --allow-env --allow-read api/main.ts",
     "dev:vite": "deno run -A npm:vite"
