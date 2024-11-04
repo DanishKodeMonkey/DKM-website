@@ -23,7 +23,6 @@ router.get("/api/repos", async (context) => {
   );
 
   try {
-    console.log(`Attempting to fetch repos: page${page}, per_page${per_page}`);
 
     // fetch user repos
     const response = await octokit.repos.listForAuthenticatedUser({
