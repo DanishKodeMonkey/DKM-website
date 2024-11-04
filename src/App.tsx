@@ -1,4 +1,4 @@
-import { BrowserRouter, useRoutes } from "react-router-dom";
+import { HashRouter, useRoutes } from "react-router-dom";
 import { Suspense } from "react";
 import Loading from "./components/Loading.tsx";
 import "./App.css";
@@ -16,7 +16,7 @@ function App() {
   return (
 
       <div className="App">
-        <BrowserRouter>
+        <HashRouter>
           <Header />
         <Suspense fallback={<Loading />}>
           <main className="container">
@@ -24,7 +24,7 @@ function App() {
           </main>
         </Suspense>
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </div>
 
   );
