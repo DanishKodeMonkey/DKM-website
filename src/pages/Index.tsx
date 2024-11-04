@@ -37,7 +37,7 @@ export default function Index() {
             <span className="highlight-green">continuous learning</span>.
           </p>
           <br className="mb-2" />
-          <p>Fighting  <span className="highlight-pink">epic</span>  battlesagainst <span className="highlight-red">Errors and bugs</span>{" "}</p>
+          <p>Fighting  {" "}<span className="highlight-pink">epic</span>  battlesagainst <span className="highlight-red">Errors and bugs</span>{" "}</p>
           <br className="mb-2" />
           <p>
             While crafting <span className="highlight-yellow">legendary websites</span>, <span className="highlight-green">backend servers </span>and <span className="highlight-red">restful-APIs!</span>
