@@ -16,6 +16,7 @@ const Header = () => {
 
     setSelectedLink(activeLink);
   }, [location.pathname]);
+
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };

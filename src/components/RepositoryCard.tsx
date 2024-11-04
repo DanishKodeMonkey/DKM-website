@@ -8,14 +8,14 @@ interface RepoCardProps {
 const RepositoryCard: React.FC<RepoCardProps> = ({ repo }) => (
   <div key={repo.id} className="card">
     <div className="p-4 flex-grow overflow-scroll">
-      <div className="flex justify-between">
-        <div className="w-1/2">
+      <div className="flex justify-around">
+        <div className="">
           <h2 className="card-title">{repo.name}</h2>
           <p className="card-description">
             {repo.description || "No description available"}
           </p>
         </div>
-        <div className="repo-preview w-1/2">
+        <div className="repo-preview min-h-full">
           {repo.preview_image
             ? (
               <img
