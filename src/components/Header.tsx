@@ -22,6 +22,7 @@ const Header = () => {
   };
 
   const handleLinkClick = (link: string) => {
+    toggleNav()
     setSelectedLink(link);
   };
 
