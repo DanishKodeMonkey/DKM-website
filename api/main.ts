@@ -22,10 +22,13 @@ router.get("/api/repos", async (context) => {
     context.request.url.searchParams.get("per_page") || "10",
   );
 
+
   try {
 
     // fetch user repos
     const response = await octokit.repos.listForAuthenticatedUser({
+      sort:"updated",
+      direction:"desc",
       per_page,
       page,
     });
