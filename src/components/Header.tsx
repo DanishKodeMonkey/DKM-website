@@ -2,6 +2,7 @@ import _React, { useEffect, useState } from "react";
 // @ts-ignore: Deno vite react hates image imports
 
 import { Link, useLocation } from "react-router-dom";
+import DarkModeButton from "./DarkModeButton.tsx";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -35,6 +36,7 @@ const Header = () => {
       </div>
 
       <nav>
+
         <button
           onClick={toggleNav}
           className="lg:hidden flex flex-col items-center focus:outline-none h-10"
@@ -49,8 +51,9 @@ const Header = () => {
             isNavOpen
               ? "block scale-y-100 opacity-100"
             : "block scale-y-50 opacity-0"
-          } lg:flex lg:items-center lg:opacity-100 lg:scale-100`}
+            } lg:flex lg:items-center lg:opacity-100 lg:scale-100`}
         >
+          <DarkModeButton />
           <ul className="flex flex-col lg:flex-row lg:space-x-4 text-right">
             {["Home", "Contact", "About", "Portfolio"].map((
               link,
@@ -58,7 +61,7 @@ const Header = () => {
               <li key={link}>
                 <Link
                   to={`/${link.toLowerCase()}`}
-                  className={`text-2xl lg:text-xl px-2 transition-all duration-300 ${
+                  className={`text-2xl lg:text-xl px-2 py-1 transition-all duration-300 ${
                     selectedLink === link
                       ? "px-24 lg:text-3xl lg:px-52 bg-secondary-light dark:bg-secondary-dark hover:text-neutral-dark  ring-2 ring-secondary-light rounded-md"
                       : ""
