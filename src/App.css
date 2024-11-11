@@ -303,13 +303,18 @@
       @apply  transition-colors ease-in-out transition ;
     }
     a{
-      @apply hover:bg-secondary-light dark:text-secondary-light text-black dark:hover:text-secondary-dark hover:rounded-lg;
+      @apply hover:bg-secondary-light dark:text-secondary-light text-tertiary-light hover:text-secondary-dark dark:hover:text-secondary-dark hover:rounded-lg;
     }
     button{
       @apply bg-secondary hover:bg-secondary-light
     }
-    footer{
+    header{
       a{
+        @apply text-neutral-dark
+      }
+    }
+    footer{
+    a{
         @apply text-highlight-light
       }
     }
