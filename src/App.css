@@ -279,7 +279,7 @@
         @apply block px-4 rounded ;
       }
       button{
-        @apply ring-0 bg-transparent h-full;
+        @apply ring-0 h-full;
       }
       h4{
         @apply text-sm 
@@ -287,6 +287,7 @@
       a{
         @apply text-sm md:text-lg
       }
+
     }
     footer{
       @apply text-center;
@@ -299,10 +300,18 @@
   @apply hf-background-light text-neutral-light dark:hf-background-dark dark:text-neutral-dark max-lg:py-4;
   }
     li{
-      @apply  transition-colors ease-in-out transition;
+      @apply  transition-colors ease-in-out transition ;
     }
     a{
-      @apply hover:bg-secondary-light dark:text-secondary-light text-black hover:text-secondary-dark;
+      @apply hover:bg-secondary-light dark:text-secondary-light text-black dark:hover:text-secondary-dark hover:rounded-lg;
+    }
+    button{
+      @apply bg-secondary hover:bg-secondary-light
+    }
+    footer{
+      a{
+        @apply text-highlight-light
+      }
     }
   .nav-burger{
     @apply bg-neutral-dark dark:bg-neutral-light;
