@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Repo } from "../types.ts";
 import { useLoading } from "../contexts/LoadingContext.tsx";
 import RepositoryCard from "../components/RepositoryCard.tsx";
+import RepoModal from "../components/RepoModal.tsx";
 
 const Portfolio: React.FC = () => {
   const [featuredRepos, setFeaturedRepos] = useState<Repo[]>([]);
   const [repos, setRepos] = useState<Repo[]>([]);
+  const [selectedRepo, setSelectedRepo] = useState<Repo | null>(null); 
   const { isLoading, setIsLoading } = useLoading();
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -19,6 +21,7 @@ const Portfolio: React.FC = () => {
   useEffect(() => {
     fetchRepos(currentPage);
   }, [currentPage]);
+
 
   const fetchFeaturedRepos = async () => {
     try {
@@ -73,10 +76,18 @@ const Portfolio: React.FC = () => {
 
   };
 
+  const handleCardClick = (repo: Repo) => {
+    setSelectedRepo(repo)
+  }
+
+  const closeModal = () => {
+    setSelectedRepo(null)
+  }
 
   if (error) {
     return <div>Error: {error}</div>;
   }
+
 
   return (
     <>
@@ -93,14 +104,14 @@ const Portfolio: React.FC = () => {
           <h2 className="pb-5">Featured Projects</h2>
           <div className="repos-container">
             {featuredRepos.map((repo: Repo) => (
-              <RepositoryCard key={repo.id} repo={repo} />
+              <RepositoryCard key={repo.id} repo={repo} onClick={() => handleCardClick(repo)} />
             ))}
           </div>
         </div>
         <div>
           <h2 className="pb-5">All my repos</h2>
           <div className="repos-container">
-            {repos.map((repo: Repo) => (<RepositoryCard key={repo.id} repo={repo} />))}
+            {repos.map((repo: Repo) => (<RepositoryCard key={repo.id} repo={repo} onClick={() => handleCardClick(repo)} />))}
 
           </div>
           {isLoading && (
@@ -119,6 +130,8 @@ const Portfolio: React.FC = () => {
           </button>
         </div>
       </div>
+      {/* Repo details modal */}
+      {selectedRepo && <RepoModal repo={selectedRepo} onClose={closeModal} />}
     </>
   );
 };

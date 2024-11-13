@@ -19,6 +19,7 @@ export interface Repo {
   id: number;
   name: string;
   html_url: string;
+  language: string;
   description: string | null;
   created_at: string;
   updated_at: string;

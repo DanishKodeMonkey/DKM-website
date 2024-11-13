@@ -225,6 +225,9 @@
     .repo-preview{
       @apply flex items-center max-w-28 min-w-28 max-h-28 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
     }
+    .modal-preview{
+      @apply flex items-center w-32 h-32 md:w-60 md:h-60 lg:w-56 lg:h-56  aspect-square ring-2 ring-neutral-300 rounded-ss-xl  text-center shrink-0 overflow-hidden;
+    }
     .repo-preview-image{
       @apply w-full h-full object-cover;
     }
@@ -360,3 +363,17 @@
  @apply pb-10
 }
 
+
+/* REPO MODAL */
+
+.modal-overlay{
+  @apply fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50;
+}
+
+.modal-content{
+  @apply bg-primary dark:bg-primary-dark bg-opacity-90 dark:bg-opacity-90 ring-2 ring-highlight-light shadow-lg shadow-highlight-light p-8 mx-auto mt-10 md:mt-52 rounded-lg max-md:max-w-lg  w-11/12 lg:w-2/3 xl:w-1/2 lg:h-2/3 relative text-left;
+}
+
+.close-button{
+@apply absolute top-2 right-2 text-xl font-bold text-tertiary-dark hover:text-tertiary-light
+}

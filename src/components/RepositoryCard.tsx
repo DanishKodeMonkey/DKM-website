@@ -3,10 +3,11 @@ import { Repo } from "../types.ts";
 
 interface RepoCardProps {
   repo: Repo;
+  onClick: () => void
 }
 
-const RepositoryCard: React.FC<RepoCardProps> = ({ repo }) => (
-  <div key={repo.id} className="card">
+const RepositoryCard: React.FC<RepoCardProps> = ({ repo, onClick }) => (
+  <div key={repo.id} className="card" onClick={onClick}>
     <div className="p-4 flex-grow overflow-scroll">
       <div className="flex justify-around">
         <div className="">
