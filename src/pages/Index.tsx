@@ -13,7 +13,7 @@ export default function Index() {
     <>
       <div className="text-center responsive-text">
 
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row xl:mx-10">
           <img src={DKM} alt="danishKodeMonkey" className="avatar max-md:self-center" />
           <div className="flex flex-col justify-end lg:justify-end xl:justify-normal xl:mt-52 text-center">
             <div className="flex justify-center">
