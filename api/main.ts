@@ -36,13 +36,15 @@ router.get("/api/repos", async (context) => {
     const repos = await Promise.all(response.data.map(async (repo) => {
       const previewUrl = getPreviewImageUrl(repo.owner.login, repo.name);
       const imageExists = await checkPreviewImageExists(previewUrl);
+
       return {
         id: repo.id,
         name: repo.name,
         html_url: repo.html_url,
         description: repo.description,
-        created_at: repo.created_at, // parse to Date
-        updated_at: repo.updated_at,
+        created_at: new Date(repo.created_at).toLocaleString(), // parse to Date
+        updated_at: new Date(repo.updated_at).toLocaleString(),
+        languages: repo.language,
         preview_image: imageExists ? previewUrl : null,
       };
     }));
@@ -72,8 +74,9 @@ router.get("/api/repos/:repoName", async (context) => {
       name: response.data.name,
       html_url: response.data.html_url,
       description: response.data.description,
-      created_at: response.data.created_at, // parse to Date
-      updated_at: response.data.updated_at,
+      created_at: new Date(response.data.created_at).toLocaleString(), // parse to Date
+      updated_at: new Date(response.data.updated_at).toLocaleString(),
+      languages: response.data.language,
       preview_image: imageExists ? previewUrl : null,
     };
   } catch (error) {
