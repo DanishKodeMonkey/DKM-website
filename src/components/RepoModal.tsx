@@ -24,7 +24,7 @@ const RepoModal: React.FC<RepoModalProps> = ({ repo, onClose }) => {
         <div className={`modal-overlay transition-opacity duration-500 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleCloseModal}>
             <div className={`modal-content transition-transform duration-200 ease-in-out transform origin-top ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-80'}`} onClick={(e) => e.stopPropagation()}>
                 <button className="close-button" onClick={handleCloseModal}>x</button>
-                <div className="flex justify-between max-sm:flex-col-reverse my-5 max-sm:items-center gap-4 h-full">
+                <div className="flex justify-between max-sm:flex-col-reverse my-5 max-sm:items-center gap-4 h-full xl:my-2">
                     <div className="flex flex-col w-2/3 max-sm:my-5 max-sm:w-full">
                         <h3>{repo.name}</h3>
                         <div className="flex flex-col sm:flex-row border border-highlight-light p-1 text-center space-y-2 sm:space-y-0 sm:space-x-4 mt-2">
@@ -41,7 +41,7 @@ const RepoModal: React.FC<RepoModalProps> = ({ repo, onClose }) => {
                         <div className="border border-highlight-light px-2 py-5 h-full">
                             <p>{repo.description}</p>
                         </div>
-                        <div className="border border-highlight-light p-2 mb-auto">
+                        <div className="border border-highlight-light p-2 mb-2">
 
                             <p>{repo.languages}</p>
                         </div>

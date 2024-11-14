@@ -226,7 +226,7 @@
       @apply flex items-center max-w-28 min-w-28 max-h-28 md:max-w-full md:w-24 lg:w-20 aspect-square ring-2 ring-neutral-300 rounded-full  text-center shrink-0 overflow-hidden;
     }
     .modal-preview{
-      @apply flex items-center w-32 h-32 md:w-60 md:h-60 lg:w-56 lg:h-56 mt-12 aspect-square ring-2 ring-neutral-300 rounded-ss-xl  text-center shrink-0 overflow-hidden;
+      @apply flex items-center w-32 h-32 md:w-60 md:h-60 lg:w-56 lg:h-56 mt-12 xl:mx-auto aspect-square ring-2 ring-neutral-300 rounded-ss-xl  text-center shrink-0 overflow-hidden;
     }
     .repo-preview-image{
       @apply w-full h-full object-cover;
