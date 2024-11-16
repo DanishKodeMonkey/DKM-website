@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+
 // @ts-ignore: Deno hates images
 import DKM from "../public/assets/WIZARDMONKEY.jpg";
-import { Comment } from "../types.ts";
 import { useLoading } from "../contexts/LoadingContext.tsx";
 import TechScroller from "../components/TechScroller.tsx";
 
