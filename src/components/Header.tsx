@@ -49,7 +49,7 @@ const Header = () => {
         </button>
 
         <div
-          className={`absolute lg:relative lg:justify-center right-0 mt-4 lg:ring-2 lg:ring-highlight-light dark:lg:ring-highlight-light max-lg:rounded-b-lg max-lg:border-highlight-light max-lg:border-b max-lg:border-l max-lg:border-r dark:border-highlight-light dark:bg-highlight-dark bg-highlight max-sm:rounded-b-lg transition-all origin-top duration-300 ease-in-out transform ${
+          className={`absolute z-20 lg:relative lg:justify-center right-0 mt-4 lg:ring-2 lg:ring-highlight-light dark:lg:ring-highlight-light max-lg:rounded-b-lg max-lg:border-highlight-light max-lg:border-b max-lg:border-l max-lg:border-r dark:border-highlight-light dark:bg-highlight-dark bg-highlight max-sm:rounded-b-lg transition-all origin-top duration-300 ease-in-out transform ${
             isNavOpen
               ? "block scale-y-100 opacity-100"
               : "block scale-y-50 opacity-0"
