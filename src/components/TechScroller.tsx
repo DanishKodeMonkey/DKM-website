@@ -91,40 +91,48 @@ const TechScroller: React.FC = () => {
 
   return (
     <>
-      <h5 className="mt-12 mb-4">have a look at my bottomless, ever-expanding toolbox of magic swords! ⚔️</h5>
-    <div id="tech-scroller">
-
-        <span className="tech-scroll-title">Bottomless Toolbox (Do not feed)</span>
-      <div
-        className="tech-container animate-slide-left"
-        id="lang-container"
-      >
-        {/* Infinite stack of languages */}
-        {[...languages, ...languages, ...languages, ...languages, ...languages]
-          .map((tech, index) => (
-            <TechItem key={index} src={tech.src} alt={tech.alt} />
-          ))}
+      <h5 className="mt-12 mb-4">
+        have a look at my bottomless, ever-expanding toolbox of magic swords! ⚔️
+      </h5>
+      <div id="tech-scroller">
+        <span className="tech-scroll-title">
+          Bottomless Toolbox (Do not feed)
+        </span>
+        <div
+          className="tech-container animate-slide-left"
+          id="lang-container"
+        >
+          {/* Infinite stack of languages */}
+          {[
+            ...languages,
+            ...languages,
+            ...languages,
+            ...languages,
+            ...languages,
+          ]
+            .map((tech, index) => (
+              <TechItem key={index} src={tech.src} alt={tech.alt} />
+            ))}
+        </div>
+        <div
+          className="tech-container animate-slide-right"
+          id="frameLib-container"
+        >
+          {/* Infinite stack of frameworks and libraries */}
+          {[
+            ...FrameworksAndLibraries,
+            ...FrameworksAndLibraries,
+            ...FrameworksAndLibraries,
+            ...FrameworksAndLibraries,
+          ].map(
+            (tech, index) => (
+              <TechItem key={index} src={tech.src} alt={tech.alt} />
+            ),
+          )}
+        </div>
       </div>
-      <div
-        className="tech-container animate-slide-right"
-        id="frameLib-container"
-      >
-        {/* Infinite stack of frameworks and libraries */}
-        {[
-          ...FrameworksAndLibraries,
-          ...FrameworksAndLibraries,
-          ...FrameworksAndLibraries,
-          ...FrameworksAndLibraries,
-        ].map(
-          (tech, index) => (
-            <TechItem key={index} src={tech.src} alt={tech.alt} />
-          ),
-        )}
-      </div>
-    </div>
     </>
   );
-
 };
 
 export default TechScroller;

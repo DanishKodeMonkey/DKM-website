@@ -23,20 +23,22 @@ const Header = () => {
   };
 
   const handleLinkClick = (link: string) => {
-    toggleNav()
+    toggleNav();
     setSelectedLink(link);
   };
 
   return (
     <header>
       <div className="flex justify-center px-4">
-        <Link to={"home"} className="font-header text-4xl md:text-5xl lg:text-6xl  text-neutral-200">
+        <Link
+          to={"home"}
+          className="font-header text-4xl md:text-5xl lg:text-6xl  text-neutral-200"
+        >
           Daniel_Runge
         </Link>
       </div>
 
       <nav>
-
         <button
           onClick={toggleNav}
           className="lg:hidden flex flex-col items-center focus:outline-none h-10"
@@ -50,8 +52,8 @@ const Header = () => {
           className={`absolute lg:relative lg:justify-center right-0 mt-4 lg:ring-2 lg:ring-highlight-light dark:lg:ring-highlight-light max-lg:rounded-b-lg max-lg:border-highlight-light max-lg:border-b max-lg:border-l max-lg:border-r dark:border-highlight-light dark:bg-highlight-dark bg-highlight max-sm:rounded-b-lg transition-all origin-top duration-300 ease-in-out transform ${
             isNavOpen
               ? "block scale-y-100 opacity-100"
-            : "block scale-y-50 opacity-0"
-            } lg:flex lg:items-center lg:opacity-100 lg:scale-100`}
+              : "block scale-y-50 opacity-0"
+          } lg:flex lg:items-center lg:opacity-100 lg:scale-100`}
         >
           <DarkModeButton />
           <ul className="flex flex-col lg:flex-row lg:space-x-4 text-right">
