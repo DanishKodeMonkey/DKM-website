@@ -3,6 +3,7 @@ import React from 'react';
 interface CpBtnProps {
     href: string;
     content: string;
+    label: string;
     target?: "_blank" | "_self" | "_parent" | "_top";
     rel?: string;
 }
@@ -14,9 +15,8 @@ function randLabel(): string {
 }
 
 const CpBtn: React.FC<CpBtnProps> = ({
-    href, content, target, rel
+    href, label, content, target, rel
 }) => {
-    const label = randLabel()
 
     return (
         <a
@@ -28,7 +28,7 @@ const CpBtn: React.FC<CpBtnProps> = ({
             <div className="clip-btn-content">
                 {content}
             </div>
-            <span className="clip-btn-label">{label}</span>
+            <span className="clip-btn-label">{label ? label : randLabel()}</span>
         </a>
     )
 }
