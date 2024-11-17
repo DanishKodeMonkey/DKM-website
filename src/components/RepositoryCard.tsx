@@ -1,9 +1,10 @@
 import _React from "react";
 import { Repo } from "../types.ts";
+import CpBtn from "./CpBtn.tsx";
 
 interface RepoCardProps {
   repo: Repo;
-  onClick: () => void
+  onClick: () => void;
 }
 
 const RepositoryCard: React.FC<RepoCardProps> = ({ repo, onClick }) => (
@@ -29,14 +30,8 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ repo, onClick }) => (
         </div>
       </div>
     </div>
-    <a
-      href={repo.html_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="card-button"
-    >
-      Check it out!
-    </a>
+
+    <CpBtn target="_blank" rel="noopener noreferrer" href={repo.html_url} content="CHECK IT OUT_" />
   </div>
 );
 
