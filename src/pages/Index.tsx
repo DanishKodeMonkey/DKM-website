@@ -1,19 +1,19 @@
 
 // @ts-ignore: Deno hates images
 import DKM from "../public/assets/WIZARDMONKEY.jpg";
-import { useLoading } from "../contexts/LoadingContext.tsx";
 import TechScroller from "../components/TechScroller.tsx";
 
 export default function Index() {
-  const { setIsLoading } = useLoading();
-
 
   return (
     <>
       <div className="text-center responsive-text">
 
-        <div className="flex flex-col md:flex-row xl:mx-10">
-          <img src={DKM} alt="danishKodeMonkey" className="avatar max-md:self-center" />
+        <div className="flex flex-col lg:flex-row xl:mr-58 xl:mx-10">
+          <div className="flex justify-center items-center p-1 bg-highlight-light avatar relative clip-tr-bl shadow-lg shadow-highlight-light">
+            <img src={DKM} alt="danishKodeMonkey" className="max-lg:self-center clip-tr-bl" />
+            <span className="clip-img-label">danishKodeMonkey</span>
+          </div>
           <div className="flex flex-col justify-end lg:justify-end xl:justify-normal xl:mt-52 text-center">
             <div className="flex justify-center">
               <h1>Hello there! </h1><h1>👋</h1>
