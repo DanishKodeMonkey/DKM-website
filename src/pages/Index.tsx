@@ -10,7 +10,7 @@ export default function Index() {
       <div className="text-center responsive-text">
 
         <div className="flex flex-col lg:flex-row xl:mr-58 xl:mx-10">
-          <div className="flex justify-center items-center p-1 bg-highlight-light avatar relative clip-tr-bl shadow-lg shadow-highlight-light">
+          <div className="flex justify-center items-center p-1 bg-highlight-light dark:bg-secondary-light avatar relative clip-tr-bl shadow-lg shadow-highlight-light">
             <div className="crt clip-tr-bl">
               <img src={DKM} alt="danishKodeMonkey" className="max-lg:self-center clip-tr-bl" />
             </div>

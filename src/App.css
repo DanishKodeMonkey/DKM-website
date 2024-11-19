@@ -98,7 +98,7 @@
     @apply bg-gradient-to-t from-highlight-light-50 from-0%  to-transparent to-70% ring-highlight-light shadow-inner;
   }
   .card-background-dark{
-    @apply bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-neutral from-20% via-slate-900 via-70% hover:via-65% to-highlight-light to-95%;
+    @apply bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-neutral from-20% via-slate-900 via-70% hover:via-65% to-secondary-light to-95%;
   }
   .card-background-light{
     @apply bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-neutral from-20% via-slate-400 via-70% hover:via-65% to-highlight-light to-95%;
@@ -286,7 +286,7 @@
     }
 
     .card {
-      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 shadow-highlight-light shadow-lg transition-all  ease-in-out  hover:shadow-xl  hover:scale-110 lg:hover:scale-125  hover:border-highlight-light  hover:ring-4 hover:z-10;
+      @apply flex flex-col justify-between max-h-80 p-1 md:p-3 lg:p-4 shadow-highlight-light dark:shadow-secondary-light ring-secondary shadow-lg transition-all  ease-in-out  hover:shadow-xl  hover:scale-110 lg:hover:scale-125  hover:border-highlight-light  hover:ring-4 hover:z-10;
 
     }
 
@@ -362,7 +362,7 @@
       @apply flex-grow;
     }
     header,footer{
-      @apply flex lg:flex-col justify-between pt-4 bg-highlight-light-50 dark:bg-secondary-light-50 transition-colors duration-300;
+      @apply flex lg:flex-col justify-between pt-4 transition-colors duration-300;
       h1{
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
       }
@@ -388,7 +388,7 @@
 
 
   header,footer{
-  @apply  text-tertiary-light dark:text-tertiary-light max-lg:py-4;
+  @apply  text-tertiary-light dark:text-tertiary-light bg-highlight-light dark:bg-secondary-dark dark:bg-opacity-80 bg-opacity-40  max-lg:py-4 ;
   }
     li{
       @apply  transition-colors ease-in-out;
@@ -415,12 +415,12 @@
     @apply bg-neutral-dark dark:bg-neutral-light;
   }
   #tech-scroller{
-    @apply  ring-highlight shadow-inner shadow-highlight-light pt-4;
+    @apply  ring-highlight dark:ring-secondary dark:shadow-secondary dark:bg-secondary-light dark:bg-opacity-20 shadow-inner shadow-highlight-light pt-4;
     span{
       @apply bg-transparent text-neutral-dark font-extrabold dark:text-highlight-light;
     }
     p:nth-child(1){
-      @apply text-secondary-light dark:text-secondary-light
+      @apply text-secondary-light dark:text-highlight-light
     }
   }
  
