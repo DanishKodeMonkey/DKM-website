@@ -17,7 +17,7 @@ export default {
         secondary: {
           /* represents highlights, call to actions or warnings: Amber pallette */
           DEFAULT: "#16ff00",
-          light: "#4f3",
+          light: {DEFAULT:"#4f3", 50:"#44ff3380"},
           dark: "#0d9900",
         },
         tertiary: {

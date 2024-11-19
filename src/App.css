@@ -74,21 +74,25 @@
     background-size: 100% 3px;
   }
   .body-background-dark{
-    @apply bg-gradient-to-b from-highlight-light-50 from-5% to-transparent to-15%;
+    @apply bg-gradient-to-b  from-secondary-light-50 from-20% to-transparent to-100%;
+    background-size: 100% 200px;
+    background-repeat: no-repeat
  }
 
   .body-background-light{
-    @apply bg-gradient-to-b from-highlight-light-50 from-5%  to-transparent to-15%
+    @apply bg-gradient-to-b from-highlight-light-50 from-20%  to-transparent to-100%;
+    background-size: 100% 200px;
+    background-repeat: no-repeat
 
   }
   .hf-background-dark{
-    @apply bg-gradient-to-b from-highlight-light from-5% via-highlight-light-50 via-20%  to-transparent to-95% ring-4 ring-highlight-light shadow-md shadow-highlight-light;
+    @apply bg-gradient-to-b from-secondary-light from-5% via-secondary-dark via-10%  to-transparent to-55% ring-4 ring-secondary-light shadow-md shadow-secondary-light;
   }
   .hf-background-light{
     @apply bg-gradient-to-b from-highlight-light from-5% via-highlight-light-50 via-20%  to-transparent to-45%  ring-4 ring-highlight-light shadow-md shadow-highlight-light;
   }
   .hf-background-dark-reverse{
-    @apply bg-gradient-to-t from-highlight-light-50 from-5% to-transparent to-95% ring-highlight-light  shadow-highlight-light;
+    @apply bg-gradient-to-t from-secondary-light-50 from-5% to-transparent to-95% ring-secondary-light  shadow-secondary-light;
   }
   .hf-background-light-reverse{
     @apply bg-gradient-to-t from-highlight-light-50 from-0%  to-transparent to-70% ring-highlight-light shadow-inner;
@@ -108,7 +112,7 @@
   /* Globals */
   /* Margin and padding reset */
   * {
-    @apply m-0 p-0 box-border transition-colors duration-700;
+    @apply m-0 p-0 box-border;
   }
 
   /* Typography resets */
@@ -139,7 +143,7 @@
 
   /* Ensuring consistent font rendering */
   body {
-    @apply -z-10 antialiased body-crt  body-background-light bg-slate-500 dark:bg-slate-900 text-neutral-dark dark:body-background-dark dark:text-neutral-light;
+    @apply -z-10 antialiased body-crt  body-background-light bg-slate-500 dark:bg-slate-900 text-neutral-dark dark:body-background-dark dark:text-neutral-light transition-colors duration-1000;
   }
   
   /* Dark/Light mode handling */
@@ -309,7 +313,7 @@
       @apply flex items-center w-32 h-32 md:w-60 md:h-60 lg:w-56 lg:h-56 mt-12 xl:mx-auto aspect-square ring-2 ring-neutral-300 rounded-ss-xl  text-center shrink-0 overflow-hidden;
     }
     .repo-preview-image{
-      @apply w-full h-full object-cover crt;
+      @apply w-full h-full object-cover;
     }
 
     .pagination{
@@ -358,7 +362,7 @@
       @apply flex-grow;
     }
     header,footer{
-      @apply flex lg:flex-col justify-between pt-4;
+      @apply flex lg:flex-col justify-between pt-4 bg-highlight-light-50 dark:bg-secondary-light-50 transition-colors duration-300;
       h1{
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
       }
@@ -387,16 +391,16 @@
   @apply  text-tertiary-light dark:text-tertiary-light max-lg:py-4;
   }
     li{
-      @apply  transition-colors ease-in-out transition ;
+      @apply  transition-colors ease-in-out;
     }
     a{
-      @apply hover:bg-secondary-light dark:text-secondary-light text-tertiary-light hover:text-secondary-dark dark:hover:text-secondary-dark hover:rounded-t-lg;
+      @apply hover:bg-secondary-light dark:text-highlight-light text-tertiary-light hover:text-secondary-dark dark:hover:text-secondary-dark hover:rounded-t-lg;
     }
     button{
-      @apply bg-highlight hover:bg-highlight-light
+      @apply bg-highlight hover:bg-highlight-light dark:bg-secondary-dark dark:hover:bg-secondary-light
     }
     header{
-      @apply shadow-lg hf-background-light dark:hf-background-dark shadow-highlight-light-50 dark:shadow-lg dark:shadow-highlight-light;
+      @apply shadow-lg hf-background-light dark:hf-background-dark shadow-highlight-light-50 dark:shadow-lg dark:shadow-secondary-light;
       a{
         @apply text-secondary-light
       }

@@ -115,8 +115,11 @@ const Portfolio: React.FC = () => {
 
           </div>
           {isLoading && (
-            <div className="text-center mx-auto my-20">
+            <div className=" flex flex-col justify-center align-middle text-center mx-auto my-20">
+
               <p>Loading...</p>
+              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-900 mb-10 self-center"></div>
+
             </div>
           )}
         </div>

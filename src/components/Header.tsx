@@ -32,7 +32,7 @@ const Header = () => {
       <div className="flex justify-center px-4">
         <Link
           to={"home"}
-          className="font-header text-4xl md:text-5xl lg:text-6xl  text-neutral-200"
+          className="font-header text-4xl md:text-5xl lg:text-6xl  "
         >
           Daniel_Runge_
         </Link>
@@ -49,7 +49,7 @@ const Header = () => {
         </button>
 
         <div
-          className={`absolute z-50 lg:relative lg:justify-center right-0 max-md:mt-4 max-lg:mt-6 lg:ring-highlight-light dark:lg:ring-highlight-light max-lg:rounded-b-lg max-lg:border-highlight-light max-lg:border-b max-lg:border-l max-lg:border-r dark:border-highlight-light max-lg:dark:bg-highlight-dark max-lg:bg-highlight-dark max-sm:rounded-b-lg transition-all origin-top duration-300 ease-in-out transform ${
+          className={`absolute z-50 lg:relative lg:justify-center right-0 max-md:mt-4 max-lg:mt-6 lg:ring-highlight-light dark:lg:ring-secondary-light max-lg:rounded-b-lg max-lg:border-highlight-light max-lg:border-b max-lg:border-l max-lg:border-r dark:border-secondary-light max-lg:dark:bg-secondary-dark max-lg:bg-highlight-dark max-sm:rounded-b-lg transition-all origin-top duration-300 ease-in-out transform ${
             isNavOpen
               ? "block scale-y-100 opacity-100"
               : "block scale-y-50 opacity-0"
@@ -65,7 +65,7 @@ const Header = () => {
                   to={`/${link.toLowerCase()}`}
                   className={`text-2xl lg:text-xl py-2 transition-all duration-300 ${
                     selectedLink === link
-                    ? "px-24 lg:text-3xl lg:px-52 dark:bg-opacity-40 max-lg:ring-2 max-lg:py-0 max-lg:ring-highlight-light max-lg:rounded-lg border-t-2 border-l-2 border-r-2 pb-3 select-none border-highlight-light rounded-b-none bg-opacity-40 bg-highlight-dark dark:bg-highlight-dark hover:text-neutral-dark dark:text-highlight-light text-highlight-light rounded-lg"
+                    ? "px-24 lg:text-3xl lg:px-52 dark:bg-opacity-40 max-lg:ring-2 max-lg:py-0 max-lg:ring-highlight-light dark:max-lg:ring-secondary-light max-lg:rounded-lg border-t-2 border-l-2 border-r-2 pb-3 select-none border-highlight-light dark:border-secondary-light rounded-b-none bg-opacity-40 bg-highlight-dark dark:bg-secondary-dark  hover:text-neutral-dark dark:text-secondary-light text-highlight-light rounded-lg"
                       : ""
                   }`}
                   onClick={() => handleLinkClick(link)}

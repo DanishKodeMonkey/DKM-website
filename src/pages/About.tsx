@@ -99,7 +99,7 @@ export default function About() {
         </div>
 
       </div>
-      <div className="w-full md:w-1/2 mx-auto mt-20 p-5 ring-2 ring-tertiary dark:ring-highlight-light bg-highlight-light dark:bg-opacity-50 crt  rounded-lg shadow-inner shadow-highlight-light">
+      <div className="w-full md:w-1/2 mx-auto mt-20 p-5 ring-2 ring-tertiary dark:ring-highlight-light bg-highlight-light dark:bg-opacity-50  rounded-lg shadow-inner shadow-highlight-light">
         <h4 className="text-lg font-bold mb-3">Fun Facts:</h4>
         <ul className="list-disc list-inside">
           <li className="highlight-green">Too passionate about Dinosaurs in code</li>
