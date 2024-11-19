@@ -30,17 +30,19 @@ const DarkModeButton = () => {
   };
 
   return (
-    <button
-      className="lg:clip-hexagon bg-secondary-dark dark:bg-highlight-dark hover:bg-secondary-light dark:hover:bg-highlight-light w-full h-8 ml-auto m-1 p-4 lg:w-9 lg:h-9 lg:m-1 lg:p-0 flex items-center justify-center cursor-pointer"
-      id="theme-toggle"
-      onClick={toggleDarkMode}
-    >
-      <img
-        src={theme === "dark" ? lightSvg : darkSvg}
-        alt="Toggle Theme"
-        className="max-w-8"
-      />
-    </button>
+    <div className="lg:clip-hexagon lg:dark:bg-highlight-light lg:bg-secondary-light-50">
+      <button
+        className="lg:clip-hexagon bg-highlight-dark lg:bg-secondary-dark lg:dark:bg-highlight-dark hover:bg-secondary-light dark:hover:bg-highlight-light w-full h-8 ml-auto m-1 p-4 lg:w-9 lg:h-9 lg:m-1 lg:p-0 flex items-center justify-center cursor-pointer"
+        id="theme-toggle"
+        onClick={toggleDarkMode}
+      >
+        <img
+          src={theme === "dark" ? lightSvg : darkSvg}
+          alt="Toggle Theme"
+          className="max-w-8"
+        />
+      </button>
+    </div>
   );
 };
 
