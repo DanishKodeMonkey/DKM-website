@@ -28,7 +28,7 @@ export default {
         },
         highlight: {
           DEFAULT: "#37e2d5",
-          light: "#73eae1",
+          light: {DEFAULT:"#73eae1", 50:"#73eae180"},
           dark: "#21877f",
         },
         neutral: {
