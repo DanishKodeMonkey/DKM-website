@@ -8,7 +8,7 @@ interface RepoCardProps {
 }
 
 const RepositoryCard: React.FC<RepoCardProps> = ({ repo, onClick }) => (
-  <div key={repo.id} className="card" onClick={onClick}>
+  <div key={repo.id} className="card hover:z-50" onClick={onClick}>
     <div className="p-4 flex-grow overflow-scroll">
       <div className="flex justify-around">
         <div className="">
@@ -17,7 +17,8 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ repo, onClick }) => (
             {repo.description || "No description available"}
           </p>
         </div>
-        <div className="repo-preview min-h-full">
+        <div className="repo-preview">
+
           {repo.preview_image
             ? (
               <img

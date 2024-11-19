@@ -61,7 +61,7 @@ const RepoModal: React.FC<RepoModalProps> = ({ repo, onClose }) => {
                     <img
                         src={repo.preview_image}
                         alt="preview image"
-                        className="modal-preview"
+                        className="modal-preview crt"
                     />
                 </div>
             </div>

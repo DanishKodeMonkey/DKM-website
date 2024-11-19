@@ -1,6 +1,6 @@
 
 // @ts-ignore: Deno hates images
-import DKM from "../public/assets/WIZARDMONKEY.jpg";
+import DKM from "../public/assets/WIZARDMONKEY3.jpg";
 import TechScroller from "../components/TechScroller.tsx";
 
 export default function Index() {
@@ -11,7 +11,9 @@ export default function Index() {
 
         <div className="flex flex-col lg:flex-row xl:mr-58 xl:mx-10">
           <div className="flex justify-center items-center p-1 bg-highlight-light avatar relative clip-tr-bl shadow-lg shadow-highlight-light">
-            <img src={DKM} alt="danishKodeMonkey" className="max-lg:self-center clip-tr-bl" />
+            <div className="crt clip-tr-bl">
+              <img src={DKM} alt="danishKodeMonkey" className="max-lg:self-center clip-tr-bl" />
+            </div>
             <span className="clip-img-label">danishKodeMonkey</span>
           </div>
           <div className="flex flex-col justify-end lg:justify-end xl:justify-normal xl:mt-52 text-center">

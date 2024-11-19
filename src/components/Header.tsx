@@ -34,7 +34,7 @@ const Header = () => {
           to={"home"}
           className="font-header text-4xl md:text-5xl lg:text-6xl  text-neutral-200"
         >
-          Daniel_Runge
+          Daniel_Runge_
         </Link>
       </div>
 
@@ -49,7 +49,7 @@ const Header = () => {
         </button>
 
         <div
-          className={`absolute z-20 lg:relative lg:justify-center right-0 mt-4 lg:ring-2 lg:ring-highlight-light dark:lg:ring-highlight-light max-lg:rounded-b-lg max-lg:border-highlight-light max-lg:border-b max-lg:border-l max-lg:border-r dark:border-highlight-light dark:bg-highlight-dark bg-highlight max-sm:rounded-b-lg transition-all origin-top duration-300 ease-in-out transform ${
+          className={`absolute z-50 lg:relative lg:justify-center right-0 max-md:mt-4 max-lg:mt-6 lg:ring-highlight-light dark:lg:ring-highlight-light max-lg:rounded-b-lg max-lg:border-highlight-light max-lg:border-b max-lg:border-l max-lg:border-r dark:border-highlight-light max-lg:dark:bg-highlight-dark max-lg:bg-highlight-dark max-sm:rounded-b-lg transition-all origin-top duration-300 ease-in-out transform ${
             isNavOpen
               ? "block scale-y-100 opacity-100"
               : "block scale-y-50 opacity-0"
@@ -63,9 +63,9 @@ const Header = () => {
               <li key={link}>
                 <Link
                   to={`/${link.toLowerCase()}`}
-                  className={`text-2xl lg:text-xl px-2 py-1 transition-all duration-300 ${
+                  className={`text-2xl lg:text-xl py-2 transition-all duration-300 ${
                     selectedLink === link
-                      ? "px-24 lg:text-3xl lg:px-52 bg-secondary-light dark:bg-secondary-dark hover:text-neutral-dark  ring-2 ring-secondary-light rounded-md"
+                    ? "px-24 lg:text-3xl lg:px-52 dark:bg-opacity-40 max-lg:ring-2 max-lg:py-0 max-lg:ring-highlight-light max-lg:rounded-lg border-t-2 border-l-2 border-r-2 pb-3 select-none border-highlight-light rounded-b-none bg-opacity-40 bg-highlight-dark dark:bg-highlight-dark hover:text-neutral-dark dark:text-highlight-light text-highlight-light rounded-lg"
                       : ""
                   }`}
                   onClick={() => handleLinkClick(link)}
