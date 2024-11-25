@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex-row justify-around ring-2">
+    <footer className="flex-row justify-around">
       <div className="flex flex-col">
         <h4>You can find me at:</h4>
         <a href="mailto:daniel_runge_@hotmail.com">
