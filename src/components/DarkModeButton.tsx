@@ -32,7 +32,7 @@ const DarkModeButton = () => {
   return (
 
       <button
-      className="lg:shadow-glowDark lg:dark:shadow-glowLight shadow-none bg-highlight-dark lg:bg-secondary-dark lg:dark:bg-highlight-dark hover:bg-secondary-light dark:hover:bg-highlight-light w-full h-8 ml-auto m-1 p-4 lg:w-9 lg:h-9 lg:m-1 lg:p-0 flex items-center justify-center cursor-pointer"
+      className="dark:bg-opacity-20 bg-opacity-20 lg:shadow-glowDark lg:dark:shadow-glowLight shadow-none bg-highlight-dark lg:bg-secondary-dark lg:dark:bg-highlight-dark hover:bg-secondary-light dark:hover:bg-highlight-light w-full h-8 ml-auto m-1 p-4 lg:w-9 lg:h-9 lg:m-1 lg:p-0 flex items-center justify-center cursor-pointer"
         id="theme-toggle"
         onClick={toggleDarkMode}
       >
