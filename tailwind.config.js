@@ -4,6 +4,10 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      boxShadow:{
+        glowDark: '0 0 40px 5px rgba(68, 255, 51, 1)',
+        glowLight: '0 0 40px 5px rgba(115, 234, 225, 1)'
+      },
       fontFamily: {
         header: ["Moonstrike-nRqzP","sans-serif"],
       },
