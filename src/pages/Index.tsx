@@ -1,6 +1,6 @@
 
 // @ts-ignore: Deno hates images
-import DKM from "../public/assets/WIZARDMONKEY3.jpg";
+import DKM from "../public/assets/WIZARDMONKEY.jpg";
 import TechScroller from "../components/TechScroller.tsx";
 
 export default function Index() {
