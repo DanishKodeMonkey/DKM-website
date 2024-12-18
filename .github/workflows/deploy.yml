@@ -31,6 +31,12 @@ jobs:
       - name: Install step
         run: "deno cache api/main.ts"
 
+      - name: Format step
+        run: deno fmt --check --ignore=src/App.css
+
+      - name: Lint step
+        run: deno lint
+
       - name: Build step
         run: "deno task build"
 
@@ -40,5 +46,3 @@ jobs:
           project: "dkm-website"
           entrypoint: "api/main.ts"
           root: "."
-          
-          
