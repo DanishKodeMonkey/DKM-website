@@ -14,7 +14,6 @@ const octokit = new Octokit({
   auth: GITHUB_TOKEN,
 });
 
-
 /* Github (portfolio) */
 router.get("/api/repos", async (context) => {
   const page = parseInt(context.request.url.searchParams.get("page") || "1");
@@ -22,13 +21,11 @@ router.get("/api/repos", async (context) => {
     context.request.url.searchParams.get("per_page") || "10",
   );
 
-
   try {
-
     // fetch user repos
     const response = await octokit.repos.listForAuthenticatedUser({
-      sort:"updated",
-      direction:"desc",
+      sort: "updated",
+      direction: "desc",
       per_page,
       page,
     });
@@ -91,6 +88,8 @@ const app = new Application();
 app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
-app.use(routeStaticFilesFrom([`${Deno.cwd()}/dist`, `${Deno.cwd()}/src/public`]))
+app.use(
+  routeStaticFilesFrom([`${Deno.cwd()}/dist`, `${Deno.cwd()}/src/public`]),
+);
 
 await app.listen({ port: 8000 });

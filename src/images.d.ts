@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 declare module "*.jpg" {
   const src: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;

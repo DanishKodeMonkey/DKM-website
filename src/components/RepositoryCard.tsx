@@ -18,7 +18,6 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ repo, onClick }) => (
           </p>
         </div>
         <div className="repo-preview">
-
           {repo.preview_image
             ? (
               <img
@@ -32,7 +31,12 @@ const RepositoryCard: React.FC<RepoCardProps> = ({ repo, onClick }) => (
       </div>
     </div>
 
-    <CpBtn target="_blank" rel="noopener noreferrer" href={repo.html_url} content="CHECK IT OUT_" />
+    <CpBtn
+      target="_blank"
+      rel="noopener noreferrer"
+      href={repo.html_url}
+      content="CHECK IT OUT_"
+    />
   </div>
 );
 

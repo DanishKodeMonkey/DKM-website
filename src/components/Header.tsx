@@ -65,7 +65,7 @@ const Header = () => {
                   to={`/${link.toLowerCase()}`}
                   className={`max-lg:w-full max-lg:text-right max-lg:block max-lg:rounded-lg text-2xl lg:text-xl py-2 transition-all duration-300 ${
                     selectedLink === link
-                    ? "lg:shadow-glowLight lg:dark:shadow-glowDark px-24 lg:text-3xl lg:px-52 dark:bg-opacity-40 max-lg:ring-2 max-lg:py-0 max-lg:ring-highlight-light dark:max-lg:ring-secondary-light max-lg:rounded-lg border-t-2 border-l-2 border-r-2 pb-3 select-none border-highlight-light dark:border-secondary-light rounded-b-none bg-opacity-40 bg-highlight-dark dark:bg-secondary-dark  hover:text-neutral-dark dark:text-secondary-light text-highlight-light rounded-lg"
+                      ? "lg:shadow-glowLight lg:dark:shadow-glowDark px-24 lg:text-3xl lg:px-52 dark:bg-opacity-40 max-lg:ring-2 max-lg:py-0 max-lg:ring-highlight-light dark:max-lg:ring-secondary-light max-lg:rounded-lg border-t-2 border-l-2 border-r-2 pb-3 select-none border-highlight-light dark:border-secondary-light rounded-b-none bg-opacity-40 bg-highlight-dark dark:bg-secondary-dark  hover:text-neutral-dark dark:text-secondary-light text-highlight-light rounded-lg"
                       : ""
                   }`}
                   onClick={() => handleLinkClick(link)}

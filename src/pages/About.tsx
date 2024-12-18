@@ -1,17 +1,17 @@
 import _React from "react";
 
 //@ts-ignore:deno hates images
-import selfTaughtGif from '../public/assets/wired-outline-2344-poetry-hover-pinch.gif'
+import selfTaughtGif from "../public/assets/wired-outline-2344-poetry-hover-pinch.gif";
 //@ts-ignore:deno hates images
-import backEndGif from '../public/assets/wired-outline-58-servers-hover-pinch.gif'
+import backEndGif from "../public/assets/wired-outline-58-servers-hover-pinch.gif";
 //@ts-ignore:deno hates images
-import frontEndGif from '../public/assets/wired-outline-1329-responsive-hover-responsive.gif'
+import frontEndGif from "../public/assets/wired-outline-1329-responsive-hover-responsive.gif";
 //@ts-ignore:deno hates images
-import foundationGif from '../public/assets/wired-outline-1321-html-5-code-language-hover-pinch.gif'
+import foundationGif from "../public/assets/wired-outline-1321-html-5-code-language-hover-pinch.gif";
 //@ts-ignore:deno hates images
-import apiGif from '../public/assets/wired-outline-1330-rest-api-hover-machine.gif'
+import apiGif from "../public/assets/wired-outline-1330-rest-api-hover-machine.gif";
 //@ts-ignore:deno hates images
-import frameworksGif from '../public/assets/wired-outline-776-hammers-hover-pinch.gif'
+import frameworksGif from "../public/assets/wired-outline-776-hammers-hover-pinch.gif";
 
 export default function About() {
   return (
@@ -23,16 +23,16 @@ export default function About() {
         </h3>
         <h4>
           I am a{"  "}
-          <span className="highlight-yellow">Full-stack developer</span>        </h4><h4>
-          going
-          on 3 years. <br />with a focus on {" "} <br />
+          <span className="highlight-yellow">Full-stack developer</span>
+        </h4>
+        <h4>
+          going on 3 years. <br />with a focus on{"   "}<br />
         </h4>
         <h5>
           <span className="highlight-green">
             web technologies and development
           </span>
         </h5>
-
       </div>
       <br />
       <div className="grid-layout gap-10 md:gap-20">
@@ -48,8 +48,14 @@ export default function About() {
         </div>
         <div className="card about-me">
           <div className="flex justify-around md:justify-between mb-5">
-            <h4 className="highlight-purple max-md:self-center">Solid foundation</h4>
-            <img src={foundationGif} alt="A solid foundation" className="about-gif" />
+            <h4 className="highlight-purple max-md:self-center">
+              Solid foundation
+            </h4>
+            <img
+              src={foundationGif}
+              alt="A solid foundation"
+              className="about-gif"
+            />
           </div>
 
           <p>Vast experience founded on vanilla JavaScript, CSS, and HTML</p>
@@ -97,14 +103,17 @@ export default function About() {
             limited to, React, Express, and postgreSQL
           </p>
         </div>
-
       </div>
       <div className="w-full md:w-1/2 mx-auto mt-20 p-5 ring-2 ring-tertiary dark:ring-secondary-light dark:bg-secondary-light dark:bg-opacity-15 bg-highlight-light  rounded-lg shadow-inner shadow-highlight-light dark:shadow-secondary-light">
         <h4 className="text-lg font-bold mb-3">Fun Facts:</h4>
         <ul className="list-disc list-inside">
-          <li className="highlight-green">Too passionate about Dinosaurs in code</li>
+          <li className="highlight-green">
+            Too passionate about Dinosaurs in code
+          </li>
           <li className="highlight-yellow">Loves gaming, and breaking games</li>
-          <li className="highlight-purple">Runs like a champ, until I trip into a swamp</li>
+          <li className="highlight-purple">
+            Runs like a champ, until I trip into a swamp
+          </li>
         </ul>
       </div>
     </div>

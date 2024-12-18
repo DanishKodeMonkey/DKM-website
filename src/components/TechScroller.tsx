@@ -85,10 +85,6 @@ const TechItem: React.FC<Tech> = ({ src, alt }: Tech) => (
 );
 
 const TechScroller: React.FC = () => {
-  const itemWidth = 48;
-  const langTranslate = itemWidth * languages.length;
-  const frameLibTranslate = itemWidth * FrameworksAndLibraries.length;
-
   return (
     <>
       <h5 className="mt-12 mb-4">

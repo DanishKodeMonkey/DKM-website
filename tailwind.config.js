@@ -4,12 +4,12 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
-      boxShadow:{
-        glowDark: '0 0 40px 5px rgba(68, 255, 51, 1)',
-        glowLight: '0 0 40px 5px rgba(115, 234, 225, 1)'
+      boxShadow: {
+        glowDark: "0 0 40px 5px rgba(68, 255, 51, 1)",
+        glowLight: "0 0 40px 5px rgba(115, 234, 225, 1)",
       },
       fontFamily: {
-        header: ["Moonstrike-nRqzP","sans-serif"],
+        header: ["Moonstrike-nRqzP", "sans-serif"],
       },
       colors: {
         primary: {
@@ -21,7 +21,7 @@ export default {
         secondary: {
           /* represents highlights, call to actions or warnings: Amber pallette */
           DEFAULT: "#16ff00",
-          light: {DEFAULT:"#4f3", 50:"#44ff3380"},
+          light: { DEFAULT: "#4f3", 50: "#44ff3380" },
           dark: "#0d9900",
         },
         tertiary: {
@@ -32,7 +32,7 @@ export default {
         },
         highlight: {
           DEFAULT: "#37e2d5",
-          light: {DEFAULT:"#73eae1", 50:"#73eae180"},
+          light: { DEFAULT: "#73eae1", 50: "#73eae180" },
           dark: "#21877f",
         },
         neutral: {

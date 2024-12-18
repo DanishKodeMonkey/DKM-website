@@ -7,11 +7,11 @@ import RepoModal from "../components/RepoModal.tsx";
 const Portfolio: React.FC = () => {
   const [featuredRepos, setFeaturedRepos] = useState<Repo[]>([]);
   const [repos, setRepos] = useState<Repo[]>([]);
-  const [selectedRepo, setSelectedRepo] = useState<Repo | null>(null); 
+  const [selectedRepo, setSelectedRepo] = useState<Repo | null>(null);
   const { isLoading, setIsLoading } = useLoading();
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [moreRepos, setMoreRepos] = useState<boolean>(true)
+  const [moreRepos, setMoreRepos] = useState<boolean>(true);
   const perPage = 9;
 
   useEffect(() => {
@@ -21,7 +21,6 @@ const Portfolio: React.FC = () => {
   useEffect(() => {
     fetchRepos(currentPage);
   }, [currentPage]);
-
 
   const fetchFeaturedRepos = async () => {
     try {
@@ -49,7 +48,6 @@ const Portfolio: React.FC = () => {
     }
   };
 
-
   const fetchRepos = async (page: number) => {
     setIsLoading(true);
     try {
@@ -61,7 +59,7 @@ const Portfolio: React.FC = () => {
       }
       const data = await response.json();
 
-      setMoreRepos(data.length === perPage)
+      setMoreRepos(data.length === perPage);
 
       setRepos((prevRepos: Repo[]) => [...prevRepos, ...data]);
     } catch (err) {
@@ -73,21 +71,19 @@ const Portfolio: React.FC = () => {
 
   const handleViewMore = () => {
     setCurrentPage((prev: number) => prev + 1);
-
   };
 
   const handleCardClick = (repo: Repo) => {
-    setSelectedRepo(repo)
-  }
+    setSelectedRepo(repo);
+  };
 
   const closeModal = () => {
-    setSelectedRepo(null)
-  }
+    setSelectedRepo(null);
+  };
 
   if (error) {
     return <div>Error: {error}</div>;
   }
-
 
   return (
     <>
@@ -104,22 +100,30 @@ const Portfolio: React.FC = () => {
           <h2 className="pb-5">Featured Projects</h2>
           <div className="repos-container">
             {featuredRepos.map((repo: Repo) => (
-              <RepositoryCard key={repo.id} repo={repo} onClick={() => handleCardClick(repo)} />
+              <RepositoryCard
+                key={repo.id}
+                repo={repo}
+                onClick={() => handleCardClick(repo)}
+              />
             ))}
           </div>
         </div>
         <div>
           <h2 className="pb-5">All my repos</h2>
           <div className="repos-container">
-            {repos.map((repo: Repo) => (<RepositoryCard key={repo.id} repo={repo} onClick={() => handleCardClick(repo)} />))}
-
+            {repos.map((repo: Repo) => (
+              <RepositoryCard
+                key={repo.id}
+                repo={repo}
+                onClick={() => handleCardClick(repo)}
+              />
+            ))}
           </div>
           {isLoading && (
             <div className=" flex flex-col justify-center align-middle text-center mx-auto my-20">
-
               <p>Loading...</p>
-              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-900 mb-10 self-center"></div>
-
+              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-900 mb-10 self-center">
+              </div>
             </div>
           )}
         </div>
@@ -129,7 +133,9 @@ const Portfolio: React.FC = () => {
             onClick={handleViewMore}
             disabled={isLoading || !moreRepos}
           >
-            {moreRepos ? "More repos!" : "I've run out of repos, to be continued!"}
+            {moreRepos
+              ? "More repos!"
+              : "I've run out of repos, to be continued!"}
           </button>
         </div>
       </div>

@@ -14,19 +14,17 @@ function AppRoutes() {
 
 function App() {
   return (
-
-      <div className="App">
-        <HashRouter>
-          <Header />
+    <div className="App">
+      <HashRouter>
+        <Header />
         <Suspense fallback={<Loading />}>
           <main className="container">
             <AppRoutes />
           </main>
         </Suspense>
-          <Footer />
-        </HashRouter>
-      </div>
-
+        <Footer />
+      </HashRouter>
+    </div>
   );
 }
 

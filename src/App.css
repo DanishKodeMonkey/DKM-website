@@ -1,3 +1,5 @@
+
+
 @font-face{
   font-family:'Moonstrike-nRqzP';
   src:url('./public/assets/fonts/Moonstrike-nRqzP.otf')
@@ -361,7 +363,8 @@
     main{
       @apply flex-grow;
     }
-    header,footer{
+    header, footer{
+
       @apply flex lg:flex-col justify-between pt-4 transition-colors duration-300;
       h1{
         @apply mx-1 md:mx-4 text-responsive font-extrabold;
@@ -383,7 +386,6 @@
     footer{
       @apply text-center ring-4 dark:ring-secondary-light shadow-md dark:shadow-secondary-light;
     }
-
   }
 
 
