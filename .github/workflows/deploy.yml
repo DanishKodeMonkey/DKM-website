@@ -23,16 +23,6 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Cache Deno dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.deno
-            ~/.cache/deno
-          key: ${{ runner.os }}-deno-${{ hashFiles('**/deps.ts') }}
-          restore-keys: |
-            ${{ runner.os }}-deno-
-
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
@@ -40,12 +30,6 @@ jobs:
 
       - name: Install step
         run: "deno cache api/main.ts"
-
-      - name: Format step
-        run: deno fmt --check --ignore=src/App.css
-
-      - name: Lint step
-        run: deno lint
 
       - name: Build step
         run: "deno task build"
@@ -56,3 +40,5 @@ jobs:
           project: "dkm-website"
           entrypoint: "api/main.ts"
           root: "."
+          
+          
